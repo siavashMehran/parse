@@ -1,0 +1,6 @@
+RAW_TEMPLATES 
+.env
+*.bat
+storage
+venv
+*.sqlite
