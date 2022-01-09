@@ -1,161 +1,349 @@
 {% load static %}
 <!DOCTYPE html>
-<html lang="en">
 
 <head>
+    <!-- Basic Page Needs -->
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!--[if IE]><meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'><![endif]-->
+    <title>خانه - گردشگران پارسه</title>
 
-    <!-- SEO Meta Tags -->
-    <meta lang="en" name="description" content="parseh is a raamsar based travel agency that provides tours, flights, and hotels all over iran">
-    <meta name="author" content="گردشگران پارسه">
+    <meta name="author" content="فردای گردشگران پارسه">
 
-    <!-- OG Meta Tags to improve the way the post looks when you share the page on LinkedIn, Facebook, Google+ -->
-    <meta property="og:site_name" content="" />
-    <!-- website name -->
-    <meta property="og:site" content="" />
-    <!-- website link -->
-    <meta property="og:title" content="" />
-    <!-- title shown in the actual shared post -->
-    <meta property="og:description" content="" />
-    <!-- description shown in the actual shared post -->
-    <meta property="og:image" content="" />
-    <!-- image link, make sure it's jpg -->
-    <meta property="og:url" content="" />
-    <!-- where do you want your post to link to -->
-    <meta property="og:type" content="article" />
+    <!-- Mobile Specific Metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-    <!-- Website Title -->
-    <title>گردشگران پارسه - آژانس گردشگری</title>
+    <!-- Theme Style -->
+    <link rel="stylesheet" type="text/css" href="{% static 'assets/css/style.css' %}">
 
-    <!-- Styles -->
-    <!-- <link href="https://fonts.googleapis.com/css?family=Montserrat:500,700&display=swap&subset=latin-ext" rel="stylesheet"> -->
-    <!-- <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,600&display=swap&subset=latin-ext" rel="stylesheet"> -->
-    <link href="{% static 'css/bootstrap.css' %}" rel="stylesheet">
-    <link href="{% static 'css/fontawesome-all.css' %}" rel="stylesheet">
-    <link href="{% static 'css/swiper.css' %}" rel="stylesheet">
-    <link href="{% static 'css/magnific-popup.css' %}" rel="stylesheet">
-    <link href="{% static 'css/styles.css' %}" rel="stylesheet">
+    <!-- Colors -->
+    <link rel="stylesheet" type="text/css" href="{% static 'assets/css/colors/color1.css' %}" id="colors">
 
-    <!-- Favicon  -->
-    <link rel="icon" href="{%static 'images/favicon.png'%}">
+    <!-- Favicon and Touch Icons  -->
+    <link rel="shortcut icon" href="{% static 'assets/icon/favicon.png' %}">
+    <link rel="apple-touch-icon-precomposed" href="{% static 'assets/icon/apple-touch-icon-158-precomposed.png' %}">
+
+
 </head>
 
-<body data-spy="scroll" data-target=".fixed-top">
+<body class="header-fixed page no-sidebar header-style-3 topbar-style-3 site-header-absolute menu-has-search">
 
-    <!-- Preloader -->
-    <div class="spinner-wrapper">
-        <div class="spinner">
-            <div class="bounce1"></div>
-            <div class="bounce2"></div>
-            <div class="bounce3"></div>
-        </div>
-    </div>
-    <!-- end of preloader -->
+<div id="wrapper" class="animsition">
+    <div id="page" class="clearfix">
+        <!-- Header Wrap -->
+        <div id="site-header-wrap">
 
+            <!-- Header -->
+            <header id="site-header">
+                <div id="site-header-inner" class="container">                    
+                    <div class="wrap-inner clearfix">
+                        <div id="site-logo" class="clearfix">
+                            <div id="site-log-inner">
+                                <a href="home.html" rel="home" class="main-logo">
+                                    <img src="{% static 'assets/img/logo-white-small.png' %}" alt="Autora" width="169" height="39" data-retina="assets/img/logo-white-small@2x.png" data-width="169" data-height="39">
+                                </a>
+                            </div>
+                        </div><!-- /#site-logo -->
 
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-md navbar-dark navbar-custom fixed-top">
-        <!-- Text Logo - Use this if you don't have a graphic logo -->
-        <a class="navbar-brand logo-text page-scroll" href="index.html">PARSEH</a>
+                        <div class="mobile-button">
+                            <span></span>
+                        </div><!-- /.mobile-button -->
 
-        <!-- Image Logo -->
-        <!-- <a class="navbar-brand logo-image" href="index.html"><img src="images/logo.svg" alt="alternative"></a> -->
+                        <nav id="main-nav" class="main-nav">
+                            <ul id="menu-primary-menu" class="menu">
+                                <li class="menu-item menu-item-has-children current-menu-item">
+                                    <a href="home.html">خانه</a>
+                                    
+                                </li>
+                                <li class="menu-item menu-item-has-children">
+                                    <a href="page-about.html"> تور ها </a>
+                                    
+                                </li>
+                                <li class="menu-item menu-item-has-children">
+                                    <a href="page-services.html">افتخارات </a>
+                                    
+                                </li>
+                                <li class="menu-item menu-item-has-children">
+                                    <a href="page-projects.html">پشتیبانی</a>
+                                    
+                                </li>
+                                <li class="menu-item menu-item-has-children">
+                                    <a href="page-blog.html">مجله گردشگری</a>
+                                    <ul class="sub-menu">
+                                        <li class="menu-item"><a href="page-testimonial.html">راهنمایی سفر</a></li>
+                                        <li class="menu-item"><a href="page-pricing.html">جا های دیدنی ایران</a></li>
+                                        <li class="menu-item"><a href="page-pricing.html">اخبار گردشگری</a></li>
+                                    </ul>
+                                </li>
+                                
+                            </ul>
+                        </nav><!-- /#main-nav -->
 
-        <!-- Mobile Menu Toggle Button -->
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-awesome fas fa-bars"></span>
-            <span class="navbar-toggler-awesome fas fa-times"></span>
-        </button>
-        <!-- end of mobile menu toggle button -->
+                        <div id="header-search">
+                            <a href="#" class="header-search-icon">
+                                <span class="search-icon fa fa-search">
+                                </span>
+                            </a>
 
-        <div class="collapse navbar-collapse" id="navbarsExampleDefault">
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item">
-                    <a class="nav-link page-scroll" href="#header">خانه <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link page-scroll" href="#intro">معرفی</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link page-scroll" href="#services">خدمات</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link page-scroll" href="#callMe">تماس با ما</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link page-scroll" href="#projects">رزرو تور</a>
-                </li>
+                            <form role="search" method="get" class="header-search-form" action="#">
+                                <label class="screen-reader-text">Search for:</label>
+                                <input type="text" value="" name="s" class="header-search-field" placeholder="Search...">
+                                <button type="submit" class="header-search-submit" title="Search">جست و جو </button>
+                            </form>
+                        </div><!-- /#header-search -->
+                    </div><!-- /.wrap-inner -->                    
+                </div><!-- /#site-header-inner -->
+            </header><!-- /#site-header -->
+        </div><!-- #site-header-wrap -->
 
-                <!-- Dropdown Menu -->
-                <!-- <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle page-scroll" href="#about" id="navbarDropdown" role="button" aria-haspopup="true" aria-expanded="false">ABOUT</a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="terms-conditions.html"><span class="item-text">TERMS CONDITIONS</span></a>
-                        <div class="dropdown-items-divide-hr"></div>
-                        <a class="dropdown-item" href="privacy-policy.html"><span class="item-text">PRIVACY POLICY</span></a>
-                    </div>
-                </li> -->
-                <!-- end of dropdown menu -->
+        <!-- Main Content -->
+        <div id="main-content" class="site-main clearfix">
 
+            {% block body %}{% endblock body %}
 
-            </ul>
-            <span class="nav-item social-icons">
+        </div><!-- /#main-content -->
 
-                <span class="fa-stack">
-                    <a href="#your-link">
-                        <!-- <span class="hexagon"></span> -->
-            <i class="fas fa-language fa-stack-2x"></i>
-            </a>
-            </span>
+        <!-- Footer -->
+        <footer id="footer" class="clearfix">
+            <div id="footer-widgets" class="container">
+                <div class="themesflat-row gutter-30">
+                    <div class="col span_1_of_3">
+                        <div class="widget widget_text">
+                            <div class="textwidget">
+                                <p>
+                                    <img src="{% static 'assets/img/logo-white@2x.png' %}" alt="Image" width="170" height="34">
+                                </p>
 
-            </span>
-        </div>
-    </nav>
-    <!-- end of navbar -->
+                                <p class="margin-bottom-15">We have over 15 years of experien able to help you 24 hours a day.</p>
 
-    {% block body %}
-    
-    {% endblock body %}
+                                <ul>
+                                    <li>
+                                        <div class="inner">
+                                            <span class="fa fa-map-marker"></span>
+                                            <span class="text">PO BOX 16122 COLLINS STREET <span class="sl">West Victoria, NewYork</span></span>
+                                        </div>
+                                    </li>
 
-    <!-- Copyright -->
-    <div class="copyright">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <p class="p-small">Copyright © 2022 <a href="https://inovatik.com">all rights reserved for ParsehTA co.</a></p>
-                </div>
-                <!-- end of col -->
-            </div>
-            <!-- enf of row -->
-        </div>
-        <!-- end of container -->
-    </div>
-    <!-- end of copyright -->
-    <!-- end of copyright -->
+                                    <li>
+                                        <div class="inner">
+                                            <span class="fa fa-phone"></span>
+                                            <span class="text">CALL US : (+61) 3 8376 6284</span>
+                                        </div>
+                                    </li>
 
+                                    <li class="margin-top-7">
+                                        <div class="inner">
+                                            <span class=" font-size-14 fa fa-envelope"></span>
+                                            <span class="text">SUPPORT@NICHE_THEME</span>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div><!-- /.widget_text -->
+                        <div class="themesflat-spacer clearfix" data-desktop="0" data-mobile="0" data-smobile="35"></div>
+                    </div><!-- /.col -->
 
-    <!-- Scripts -->
-    <script src="{% static 'js/jquery.min.js' %}"></script>
-    <!-- jQuery for Bootstrap's JavaScript plugins -->
-    <script src="{% static 'js/popper.min.js' %}"></script>
-    <!-- Popper tooltip library for Bootstrap -->
-    <script src="{% static 'js/bootstrap.min.js' %}"></script>
-    <!-- Bootstrap framework -->
-    <script src="{% static 'js/jquery.easing.min.js' %}"></script>
-    <!-- jQuery Easing for smooth scrolling between anchors -->
-    <script src="{% static 'js/swiper.min.js' %}"></script>
-    <!-- Swiper for image and text sliders -->
-    <script src="{% static 'js/jquery.magnific-popup.js' %}"></script>
-    <!-- Magnific Popup for lightboxes -->
-    <script src="{% static 'js/morphext.min.js' %}"></script>
-    <!-- Morphtext rotating text in the header -->
-    <script src="{% static 'js/isotope.pkgd.min.js' %}"></script>
-    <!-- Isotope for filter -->
-    <script src="{% static 'js/validator.min.js' %}"></script>
-    <!-- Validator.js - Bootstrap plugin that validates forms -->
-    <script src="{% static 'js/scripts.js' %}"></script>
+                    <div class="col span_1_of_3">
+                        <div class="themesflat-spacer clearfix" data-desktop="0" data-mobile="0" data-smobile="0"></div>
+
+                        <div class="widget widget_lastest">
+                            <h2 class="widget-title"><span>RECENT POSTS</span></h2>
+                            <ul class="lastest-posts data-effect clearfix">
+                                <li class="clearfix">
+                                    <div class="thumb data-effect-item has-effect-icon">
+                                        <img src="assets/img/news/post-1-65x65.jpg" alt="Image">
+                                        <div class="overlay-effect bg-color-2"></div>
+                                        <div class="elm-link">
+                                            <a href="page-blog-single.html" class="icon-2"></a>
+                                        </div>
+                                    </div>
+                                    <div class="text">
+                                        <h3><a href="page-blog-single.html">SMART BUILDING WITH CONCRETE SUSTAINABLE</a></h3>
+                                        <span class="post-date"><span class="entry-date">29 June 2018</span></span>
+                                    </div>
+                                </li>
+                                <li class="clearfix">
+                                    <div class="thumb data-effect-item has-effect-icon">
+                                        <img src="assets/img/news/post-2-65x65.jpg" alt="Image">
+                                        <div class="overlay-effect bg-color-2"></div>
+                                        <div class="elm-link">
+                                            <a href="page-blog-single.html" class="icon-2"></a>
+                                        </div>
+                                    </div>
+                                    <div class="text">
+                                        <h3><a href="page-blog-single.html">HI-TECH WOODEN HOUSE BUILT WITHOUT GLUE</a></h3>
+                                        <span class="post-date"><span class="entry-date">31 June 2018</span></span>
+                                    </div>
+                                </li>                                
+                            </ul>
+                        </div><!-- /.widget_lastest -->                       
+                    </div><!-- /.col -->
+
+                    <div class="col span_1_of_3">
+                        <div class="themesflat-spacer clearfix" data-desktop="0" data-mobile="35" data-smobile="35"></div>
+
+                        <div class="widget widget_tags">
+                            <h2 class="widget-title margin-bottom-30"><span>TAGS</span></h2>
+                            <div class="tags-list">
+                                <a href="#">Building</a>
+                                <a href="#">Smart House</a>
+                                <a href="#">Costruction</a>
+                                <a href="#">Villa</a>
+                                <a href="#">Residential</a>
+                                <a href="#">Interior</a>
+                                <a href="#">Resort</a>
+                                <a href="#">Commercial</a>
+                            </div>
+                        </div>
+                    </div><!-- /.col -->
+
+                    <div class="col span_1_of_3">
+                        <div class="themesflat-spacer clearfix" data-desktop="0" data-mobile="35" data-smobile="35"></div>
+
+                        <div class="widget widget_instagram">
+                            <h2 class="widget-title margin-bottom-30"><span>INSTAGRAM PHOTOS</span></h2>
+                            <div class="instagram-wrap data-effect clearfix col3 g10">
+                                <div class="instagram_badge_image has-effect-icon">
+                                    <a href="#" target="_blank" class="data-effect-item">
+                                        <span class="item"><img src="assets/img/instagram/instagram-1-83x83.jpg" alt="Image" ></span>
+                                        <div class="overlay-effect bg-color-2"></div>
+                                        <div class="elm-link">
+                                            <span class="icon-3"></span>
+                                        </div>
+                                    </a>                                    
+                                </div>
+
+                                <div class="instagram_badge_image has-effect-icon">
+                                    <a href="#" target="_blank" class="data-effect-item">
+                                        <span class="item"><img src="assets/img/instagram/instagram-2-83x83.jpg" alt="Image" ></span>
+                                        <div class="overlay-effect bg-color-2"></div>
+                                        <div class="elm-link">
+                                            <span class="icon-3"></span>
+                                        </div>
+                                    </a>
+                                    
+                                </div>
+
+                                <div class="instagram_badge_image has-effect-icon">
+                                    <a href="#" target="_blank" class="data-effect-item">
+                                        <span class="item"><img src="assets/img/instagram/instagram-3-83x83.jpg" alt="Image"></span>
+                                        <div class="overlay-effect bg-color-2"></div>
+                                        <div class="elm-link">
+                                            <span class="icon-3"></span>
+                                        </div>
+                                    </a>                                    
+                                </div>
+
+                                <div class="instagram_badge_image has-effect-icon">
+                                    <a href="#" target="_blank" class="data-effect-item">
+                                        <span class="item"><img src="assets/img/instagram/instagram-4-83x83.jpg" alt="Image"></span>
+                                        <div class="overlay-effect bg-color-2"></div>
+                                        <div class="elm-link">
+                                            <span class="icon-3"></span>
+                                        </div>
+                                    </a>
+                                </div>
+
+                                <div class="instagram_badge_image has-effect-icon">
+                                    <a href="#" target="_blank" class="data-effect-item">
+                                        <span class="item"><img src="assets/img/instagram/instagram-5-83x83.jpg" alt="Image"></span>
+                                        <div class="overlay-effect bg-color-2"></div>
+                                        <div class="elm-link">
+                                            <span class="icon-3"></span>
+                                        </div>
+                                    </a>                                    
+                                </div>
+
+                                <div class="instagram_badge_image has-effect-icon">
+                                    <a href="#" target="_blank" class="data-effect-item">
+                                        <span class="item"><img src="assets/img/instagram/instagram-6-83x83.jpg" alt="Image"></span>
+                                        <div class="overlay-effect bg-color-2"></div>
+                                        <div class="elm-link">
+                                            <span class="icon-3"></span>
+                                        </div>
+                                    </a>                                    
+                                </div>
+                            </div>
+                        </div><!-- /.widget_instagram -->
+                    </div><!-- /.col -->
+                </div><!-- /.themesflat-row -->
+            </div><!-- /#footer-widgets -->
+        </footer><!-- /#footer -->
+
+        <!-- Bottom -->
+        <div id="bottom" class="clearfix has-spacer">
+            <div id="bottom-bar-inner" class="container">
+                <div class="bottom-bar-inner-wrap">
+                    <div class="bottom-bar-content">
+                        <div id="copyright">© <span class="text">Construction Template. Design <a href="#" class="text-accent">by @Niche_Theme</a></span> 
+                        </div>
+                    </div><!-- /.bottom-bar-content -->
+
+                    <div class="bottom-bar-menu">
+                        <ul class="bottom-nav">
+                            <li class="menu-item current-menu-item">
+                                <a href="home.html">HOME</a>
+                            </li>
+                            <li class="menu-item">
+                                <a href="page-about.htnml">ABOUT US</a>
+                            </li>
+                            <li class="menu-item">
+                                <a href="page-services.html">SERVICES</a>
+                            </li>
+                            <li class="menu-item">
+                                <a href="page-projects.html">PROJECTS</a>
+                            </li>
+                            <li class="menu-item">
+                                <a href="page-testimonial.html">PAGE</a>
+                            </li>
+                            <li class="menu-item">
+                                <a href="page-blog.html">BLOG</a>
+                            </li>
+                            <li class="menu-item">
+                                <a href="page-contact.html">CONTACT</a>
+                            </li>
+                        </ul>
+                    </div><!-- /.bottom-bar-menu -->
+                </div><!-- /.bottom-bar-inner-wrap -->                
+            </div><!-- /#bottom-bar-inner -->
+        </div><!-- /#bottom -->
+
+    </div><!-- /#page -->
+</div><!-- /#wrapper -->
+
+<a id="scroll-top"></a>
+
+<!-- Javascript -->
+<script src="{% static 'assets/js/jquery.min.js' %}"></script>
+<script src="{% static 'assets/js/plugins.js' %}"></script>
+<script src="{% static 'assets/js/tether.min.js' %}"></script>
+<script src="{% static 'assets/js/bootstrap.min.js' %}"></script>
+<script src="{% static 'assets/js/animsition.js' %}"></script>
+<script src="{% static 'assets/js/owl.carousel.min.js' %}"></script>
+<script src="{% static 'assets/js/countto.js' %}"></script>
+<script src="{% static 'assets/js/equalize.min.js' %}"></script>
+<script src="{% static 'assets/js/jquery.isotope.min.js' %}"></script>
+<script src="{% static 'assets/js/owl.carousel2.thumbs.js' %}"></script>
+
+<script src="{% static 'assets/js/jquery.cookie.js' %}"></script>
+<script src="{% static 'assets/js/gmap3.min.js' %}"></script>
+<script src="{% static 'assets/js/shortcodes.js' %}"></script>
+<script src="{% static 'assets/js/main.js' %}"></script>
+
+<!-- Revolution Slider -->
+<script src="{% static 'includes/rev-slider/js/jquery.themepunch.tools.min.js' %}"></script>
+<script src="{% static 'includes/rev-slider/js/jquery.themepunch.revolution.min.js' %}"></script>
+<script src="{% static 'assets/js/rev-slider.js' %}"></script>
+<!-- Load Extensions only on Local File Systems ! The following part can be removed on Server for On Demand Loading -->  
+<script src="{% static 'includes/rev-slider/js/extensions/revolution.extension.actions.min.js'%}"></script>
+<script src="{% static 'includes/rev-slider/js/extensions/revolution.extension.carousel.min.js'%}"></script>
+<script src="{% static 'includes/rev-slider/js/extensions/revolution.extension.kenburn.min.js'%}"></script>
+<script src="{% static 'includes/rev-slider/js/extensions/revolution.extension.layeranimation.min.js'%}"></script>
+<script src="{% static 'includes/rev-slider/js/extensions/revolution.extension.migration.min.js'%}"></script>
+<script src="{% static 'includes/rev-slider/js/extensions/revolution.extension.navigation.min.js'%}"></script>
+<script src="{% static 'includes/rev-slider/js/extensions/revolution.extension.parallax.min.js'%}"></script>
+<script src="{% static 'includes/rev-slider/js/extensions/revolution.extension.slideanims.min.js'%}"></script>
+<script src="{% static 'includes/rev-slider/js/extensions/revolution.extension.video.min.js'%}"></script>
 
 </body>
-
 </html>
+
