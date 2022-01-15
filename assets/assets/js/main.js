@@ -106,6 +106,8 @@
                     var nav = $('.site-navigation-wrap');
                 }
 
+                
+
                 if ( nav.length ) {
                     var offsetTop = nav.offset().top,
                         headerHeight = nav.height(),
@@ -114,7 +116,7 @@
                         }).insertAfter(nav);
 
                     $(window).on('load scroll', function(){
-                        if ( $(window).scrollTop() > offsetTop ) {
+                        if ( $(window).scrollTop() > 0 ) {
                             nav.addClass('is-fixed');
                             injectSpace.show();
                         } else {
@@ -122,7 +124,7 @@
                             injectSpace.hide();
                         }
 
-                        if ( $(window).scrollTop() > 300 ) { 
+                        if ( $(window).scrollTop() > 0 ) { 
                             nav.addClass('is-small');
                         } else {
                             nav.removeClass('is-small');
@@ -202,7 +204,6 @@
         },
 
     }; // end themesflatTheme
-
     // Start things up
     themesflatTheme.init();
 
