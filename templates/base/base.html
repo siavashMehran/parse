@@ -28,7 +28,7 @@
 
 </head>
 
-<body class="header-fixed page no-sidebar header-style-3 {% block faded_nav %}site-header-absolute{% endblock faded_nav %} menu-has-search">
+<body class="header-fixed page no-sidebar {% block body_classes %}header-style-2{% endblock body_classes %} menu-has-search">
 
 <div id="wrapper" class="animsition">
     <div id="page" class="clearfix">
@@ -41,8 +41,8 @@
                     <div class="wrap-inner clearfix">
                         <div id="site-logo" class="clearfix">
                             <div id="site-log-inner">
-                                <a href="home.html" rel="home" class="main-logo">
-                                    <img src="{% static 'assets/img/logo-white-small.png' %}" alt="Autora" width="169" height="39" data-retina="assets/img/logo-white-small@2x.png" data-width="169" data-height="39">
+                                <a href="{% url 'home' %}" rel="home" class="main-logo">
+                                    <img class="logo-img" src="{% static 'img/LOGOMAIN.png' %}" alt="PARSEH" width="45" height="45" data-retina="{% static 'img/LOGOMAIN.png' %}" data-width="30" data-height="30">
                                 </a>
                             </div>
                         </div><!-- /#site-logo -->
@@ -58,7 +58,7 @@
                                     
                                 </li>
                                 <li class="menu-item">
-                                    <a href="page-about.html"> تور ها </a>
+                                    <a href="{% url 'tourdetail' %}"> تور ها </a>
                                     
                                 </li>
                                 <li class="menu-item">
@@ -105,7 +105,7 @@
                 <div class="featured-title-inner-wrap">                    
                     <div class="featured-title-heading-wrap">
                         <h1 class="feautured-title-heading tar">
-                            {% block path %}About Us{% endblock path %}
+                            {% block path %}{% endblock path %}
                         </h1>
                     </div>
                 </div><!-- /.featured-title-inner-wrap -->

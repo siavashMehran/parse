@@ -517,8 +517,7 @@ body.page #main-content { padding-top: 0; padding-bottom: 0; }
 #site-header #header-search { position: absolute; right: 15px; top: 50%; z-index: 10; display: none; -webkit-transform: translateY(-50%);-ms-transform: translateY(-50%);-o-transform: translateY(-50%);transform: translateY(-50%);  }
 
 /* Site Logo */
-#site-logo { float: left; max-width: 100%; }
-
+#site-logo { float: left; max-width: 100%;}
 /* Main Nav */
 #main-nav ul { margin: 0px; }
 #main-nav ul li { position: relative;  list-style: none;}
@@ -1137,10 +1136,10 @@ body.page #main-content { padding-top: 0; padding-bottom: 0; }
 .fowe{
   font-weight: 700 !important;
 }
-/* .themesflat-list.has-icon .icon{
+.themesflat-list.has-icon .icon{
   top: 50%;
   right: -5%;
-} */
+} 
 
 .h100vh{
   height: 100vh !important;
@@ -1148,4 +1147,26 @@ body.page #main-content { padding-top: 0; padding-bottom: 0; }
 
 .w100vh{
   width: 100vh !important;
+}
+.logo-img{
+  filter: invert(1);
+}
+
+.detail-inner-wrap .list-info.has-icon.icon-left .icon{
+  left: unset;
+  right: 2px;
+}
+.detail-inner-wrap .list-info.has-icon.icon-left span.right{
+  left: unset;
+  right: 30px;
+}
+
+.themesflat-accordions.style-3.has-icon.icon-left.iconstyle-2 .accordion-item .accordion-heading > .inner{
+  padding: 0 10% 0 0 ;
+}
+.accordion-heading{
+  text-align: right;
+}
+.has-thumb .owl-theme .owl-thumbs{
+  display: none;
 }

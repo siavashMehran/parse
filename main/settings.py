@@ -33,6 +33,10 @@ INSTALLED_APPS = [
     'rest_framework',
     'django_render_partial',
     'tinymce',
+
+    #apps
+    'APP_INFO',
+    'APP_TOUR',
 ]
 
 MIDDLEWARE = [

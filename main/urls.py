@@ -1,19 +1,12 @@
 
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 
-from django.shortcuts import render
-def home(request):
-
-    return render(request, 'base/index.html', {}, status=200, content_type='text/html')
-def about(request):
-
-    return render(request, 'base/about.html', {}, status=200, content_type='text/html')
 
 
 urlpatterns = [
     path('modir/', admin.site.urls),
 
-    path('', home, name='home'),
-    path('about', about, name='about'),
+    path('', include('APP_INFO.urls')),
+    path('tour', include('APP_TOUR.urls')),
 ]
