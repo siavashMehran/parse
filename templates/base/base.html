@@ -1,3 +1,4 @@
+{% load render_partial %}
 {% load static %}
 <!DOCTYPE html>
 
@@ -34,68 +35,7 @@
     <div id="page" class="clearfix">
         <!-- Header Wrap -->
         <div id="site-header-wrap">
-
-            <!-- Header -->
-            <header id="site-header">
-                <div id="site-header-inner" class="container">                    
-                    <div class="wrap-inner clearfix">
-                        <div id="site-logo" class="clearfix">
-                            <div id="site-log-inner">
-                                <a href="{% url 'home' %}" rel="home" class="main-logo">
-                                    <img class="logo-img" src="{% static 'img/LOGOMAIN.png' %}" alt="PARSEH" width="45" height="45" data-retina="{% static 'img/LOGOMAIN.png' %}" data-width="30" data-height="30">
-                                </a>
-                            </div>
-                        </div><!-- /#site-logo -->
-
-                        <div class="mobile-button">
-                            <span></span>
-                        </div><!-- /.mobile-button -->
-
-                        <nav id="main-nav" class="main-nav laleh fowe">
-                            <ul id="menu-primary-menu" class="menu">
-                                <li class="menu-item current-menu-item">
-                                    <a href="{% url 'home' %}">خانه</a>
-                                    
-                                </li>
-                                <li class="menu-item">
-                                    <a href="{% url 'tourdetail' %}"> تور ها </a>
-                                    
-                                </li>
-                                <li class="menu-item">
-                                    <a href="{% url 'about' %}">افتخارات </a>
-                                    
-                                </li>
-                                <li class="menu-item">
-                                    <a href="page-projects.html">پشتیبانی</a>
-                                    
-                                </li>
-                                <li class="menu-item menu-item-has-children">
-                                    <a href="page-blog.html">مجله گردشگری</a>
-                                    <ul class="sub-menu">
-                                        <li class="menu-item"><a href="page-testimonial.html">راهنمایی سفر</a></li>
-                                        <li class="menu-item"><a href="page-pricing.html">جا های دیدنی ایران</a></li>
-                                        <li class="menu-item"><a href="page-pricing.html">اخبار گردشگری</a></li>
-                                    </ul>
-                                </li>
-                                
-                            </ul>
-                        </nav><!-- /#main-nav -->
-
-                        <div id="header-search">
-                            <a href="#" class="header-search-icon">
-                                <span class="search-icon fa fa-search">
-                                </span>
-                            </a>
-
-                            <form role="search" method="get" class="header-search-form" action="#">
-                                <label class="screen-reader-text">Search for:</label>
-                                <input type="text" value="" name="s" class="header-search-field" placeholder="Search...">
-                                <button type="submit" class="header-search-submit" title="Search">جست و جو </button>
-                            </form>
-                        </div><!-- /#header-search -->
-                    </div><!-- /.wrap-inner -->                    
-                </div><!-- /#site-header-inner -->
-            </header><!-- /#site-header -->
+            {% render_partial  "partials.views.partial_header" %}
         </div><!-- #site-header-wrap -->
 
         {% block bread %}

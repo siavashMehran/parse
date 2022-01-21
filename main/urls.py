@@ -9,4 +9,5 @@ urlpatterns = [
 
     path('', include('APP_INFO.urls')),
     path('tour', include('APP_TOUR.urls')),
+    path('partials', include('partials.urls')),
 ]

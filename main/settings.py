@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     #apps
     'APP_INFO',
     'APP_TOUR',
+    'partials'
 ]
 
 MIDDLEWARE = [
@@ -138,7 +139,7 @@ if DEBUG :
 
 
     INSTALLED_APPS += [
-        'debug_toolbar',
+        # 'debug_toolbar',
     ]
 
     ALLOWED_HOSTS += [ 
