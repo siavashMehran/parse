@@ -1170,3 +1170,20 @@ body.page #main-content { padding-top: 0; padding-bottom: 0; }
 .has-thumb .owl-theme .owl-thumbs{
   display: none;
 }
+.themesflat-testimonials.style-3 .thumb{
+  height: unset;
+  width: 100%;
+}
+.testimonial-item .position::after {
+  content: '';
+  height: 1px;
+  width: 30%;
+  position: relative;
+  left: 35%;
+  background-color: #ffc30c;
+  top: 1px;
+  display: block;
+}
+.position{
+  color: #ffc30c !important;
+}

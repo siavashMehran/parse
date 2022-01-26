@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from .models import ContactUs, SiteSettings, Testimonial
+from .models import Certificates, ContactUs, SiteSettings, Testimonial
 
 @admin.register(ContactUs)
 class ContactUsAdmin(admin.ModelAdmin):
@@ -23,3 +23,6 @@ class SiteSettingsAdmin(admin.ModelAdmin):
         
         )
     
+@admin.register(Certificates)
+class CertificateAdmin(admin.ModelAdmin):
+    list_display = ['__str__']

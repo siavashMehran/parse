@@ -1,4 +1,6 @@
 from django.shortcuts import render
+
+from .models import Certificates
 from .forms import ContactUsModelForm
 
 from django.shortcuts import render
@@ -7,7 +9,12 @@ def home(request):
 
 
 def about(request):
-    return render(request, 'about.html', {}, status=200, content_type='text/html')
+
+    certificates = Certificates.objects.all()
+    context = {
+        'certificates' : certificates
+    }
+    return render(request, 'about.html', context, status=200, content_type='text/html')
 
 
 def ContactUs(request):

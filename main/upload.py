@@ -5,13 +5,19 @@ def get_name_ext(filepath):
     filename, ext = os.path.splitext(fullName)
     return filename, ext
 
-
-def upload(app_name:str):
-
-    def media_upload_path(instance, filepath):
-        
+def media_upload_path(instance, filepath, app_name=None):
+        """
+        example : `gallery/5_43848283138283.jpeg`
+        """
         filename, ext = get_name_ext(filepath)
+        if app_name != ' ':
+            return 
 
-        return f"{app_name}/{randint(1, 10)}_{randint(100000000000, 999999999999999)}.{ext}"
+        return f"{randint(1, 10)}_{randint(100000000000, 999999999999999)}{ext}"
+        
 
-    return media_upload_path
+def upload(func, app_name:str):
+
+    
+
+    return f"{app_name}/{func}"

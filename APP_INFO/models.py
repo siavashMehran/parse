@@ -5,7 +5,7 @@ from django.db.models.signals import pre_save
 from django.dispatch import receiver
 
 #upload
-from main.upload import upload
+from main.upload import upload, media_upload_path
 
 class SiteSettings(models.Model):
 
@@ -21,7 +21,7 @@ class SiteSettings(models.Model):
 
 
     # site header
-    site_logo    = models.ImageField(upload_to=upload('logo'), blank=False)
+    site_logo    = models.ImageField(upload_to=upload(media_upload_path, 'logo'), blank=False)
 
     # contacting info
     site_email   = models.EmailField(max_length=40, blank=False)
@@ -97,7 +97,7 @@ class Testimonial(models.Model):
 
     name    = models.CharField(max_length=40, blank=False)
     tour_loc   = models.CharField(max_length=40, blank=False, help_text=help_text['tour_loc'])
-    image   = models.ImageField(upload_to=upload('testimonials'), blank=True, help_text=help_text['image'])
+    image   = models.ImageField(upload_to=upload(media_upload_path, 'testimonial'), blank=True, help_text=help_text['image'])
     story = models.TextField(max_length=300, blank=False)
 
 
@@ -115,7 +115,8 @@ class Certificates(models.Model):
         verbose_name = 'گواهینامه ها'
         verbose_name_plural = 'گواهینامه'
 
-    img = models.ImageField(upload_to=upload('certs'), blank=False)
+    name = models.CharField('نام مدرک', max_length=60, blank=False)
+    img = models.ImageField(upload_to=upload(media_upload_path, 'certs'), blank=False)
     caption = models.TextField
 
 
