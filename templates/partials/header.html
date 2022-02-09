@@ -8,7 +8,7 @@
             <div id="site-logo" class="clearfix">
                 <div id="site-log-inner">
                     <a href="{% url 'home' %}" rel="home" class="main-logo">
-                        <img class="logo-img" src="{% static 'img/LOGOMAIN.png' %}" alt="PARSEH" width="45" height="45" data-retina="{% static 'img/LOGOMAIN.png' %}" data-width="30" data-height="30">
+                        <img class="logo-img" src="{{logo.url}}" alt="PARSEH" width="45" height="45" data-retina="{% static 'img/LOGOMAIN.png' %}" data-width="30" data-height="30">
                     </a>
                 </div>
             </div><!-- /#site-logo -->
@@ -31,7 +31,7 @@
                         
                     </li>
                     <li class="menu-item{% if request.path == '/contact' %} current-menu-item{% endif %}">
-                        <a href="page-projects.html">پشتیبانی</a>
+                        <a href="{% url 'contact' %}">پشتیبانی</a>
                         
                     </li>
                     <li class="menu-item menu-item-has-children{% if request.path == '/blog' %} current-menu-item{% endif %}">
@@ -42,22 +42,16 @@
                             <li class="menu-item"><a href="page-pricing.html">اخبار گردشگری</a></li>
                         </ul>
                     </li>
+                    <div id="header-search">
+                        <a href="/en/" class="header-search-icon">
+                            <span class="search-icon fa fa-search">
+                            </span>
+                        </a>
+                    </div>
                     
                 </ul>
             </nav><!-- /#main-nav -->
 
-            <div id="header-search">
-                <a href="#" class="header-search-icon">
-                    <span class="search-icon fa fa-search">
-                    </span>
-                </a>
-
-                <form role="search" method="get" class="header-search-form" action="#">
-                    <label class="screen-reader-text">Search for:</label>
-                    <input type="text" value="" name="s" class="header-search-field" placeholder="Search...">
-                    <button type="submit" class="header-search-submit" title="Search">جست و جو </button>
-                </form>
-            </div><!-- /#header-search -->
         </div><!-- /.wrap-inner -->                    
     </div><!-- /#site-header-inner -->
 </header><!-- /#site-header -->

@@ -1,11 +1,14 @@
+
 from django.db import models
 
 # imports for signals
 from django.db.models.signals import pre_save
 from django.dispatch import receiver
 
+
 #upload
-from main.upload import upload, media_upload_path
+from .upload import media_certificates_upload_path, media_logo_upload_path, media_testimonial_upload_path
+
 
 class SiteSettings(models.Model):
 
@@ -21,7 +24,7 @@ class SiteSettings(models.Model):
 
 
     # site header
-    site_logo    = models.ImageField(upload_to=upload(media_upload_path, 'logo'), blank=False)
+    site_logo    = models.ImageField(upload_to=media_logo_upload_path, blank=False)
 
     # contacting info
     site_email   = models.EmailField(max_length=40, blank=False)
@@ -32,9 +35,14 @@ class SiteSettings(models.Model):
     # about us
     site_story_short = models.TextField(max_length=300, blank=False, help_text=help_text['story_short'])
     site_story_long  = models.TextField(max_length=900, blank=False, help_text=help_text['story_long'])
+    about_us_img = models.ImageField(upload_to=media_logo_upload_path, blank=False)
 
     def __str__(self):
         return 'Main Configuration'
+
+    @classmethod
+    def get_latest(cls):
+        return cls.objects.latest('pk')
 
     class Meta:
         verbose_name = 'اطلاعات اصلی'
@@ -46,7 +54,7 @@ class SiteSettings(models.Model):
 @receiver(pre_save, sender=SiteSettings)
 def pre_save_reciever(sender:SiteSettings, instance, *args, **kwargs):
     if sender.objects.count() > 0 :
-        sender.objects.delete()
+        sender.objects.all().delete()
 
 
 
@@ -97,7 +105,7 @@ class Testimonial(models.Model):
 
     name    = models.CharField(max_length=40, blank=False)
     tour_loc   = models.CharField(max_length=40, blank=False, help_text=help_text['tour_loc'])
-    image   = models.ImageField(upload_to=upload(media_upload_path, 'testimonial'), blank=True, help_text=help_text['image'])
+    image   = models.ImageField(upload_to=media_testimonial_upload_path, blank=True, help_text=help_text['image'])
     story = models.TextField(max_length=300, blank=False)
 
 
@@ -116,10 +124,11 @@ class Certificates(models.Model):
         verbose_name_plural = 'گواهینامه'
 
     name = models.CharField('نام مدرک', max_length=60, blank=False)
-    img = models.ImageField(upload_to=upload(media_upload_path, 'certs'), blank=False)
-    caption = models.TextField
+    img = models.ImageField(upload_to=media_certificates_upload_path, blank=False)
+    caption = models.TextField('توضیح', blank=False)
 
-
+    def __str__(self):
+        return self.name
 
 # represents the company staff and there can onley be 3 or 4 of them
 # class OurStaff(models.Model):
@@ -142,3 +151,15 @@ class Certificates(models.Model):
 #     class Meta:
 #         verbose_name = 'Staff'
 #         verbose_name_plural = 'Staff'
+
+class FAQ(models.Model):
+
+    class Meta:
+        verbose_name = 'FAQ'
+        verbose_name_plural = 'FAQs'
+
+    def __str__(self):
+        return self.question
+
+    question = models.CharField('سوال', max_length=300, blank=False)
+    answer = models.TextField('جواب', blank=False, max_length=400)

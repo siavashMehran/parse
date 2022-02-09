@@ -43,6 +43,7 @@ INSTALLED_APPS = [
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.middleware.locale.LocaleMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -126,6 +127,10 @@ MEDIA_ROOT = path.join(BASE_DIR, 'storage', 'MEDIA')
 
 DEFAULT_CHARSET = 'UTF-8'
 
+LANGUAGES = (
+    ('fa', 'farsi'),
+    ('en', 'english'),
+)
 
 if DEBUG :
 

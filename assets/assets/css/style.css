@@ -1187,3 +1187,17 @@ body.page #main-content { padding-top: 0; padding-bottom: 0; }
 .position{
   color: #ffc30c !important;
 }
+.themesflat-accordions.has-icon.icon-left .accordion-item .accordion-heading > .inner{
+  padding: 0 34px 0 0;
+}
+.themesflat-accordions.style-1 .accordion-item .accordion-content{
+  padding-left: 0;
+  padding-right: 56px;
+}
+.themesflat-accordions.has-icon .accordion-item .accordion-heading > .inner::before {
+	right: 0;
+}
+.map-embed{
+  width: 100%;
+  height: 80%;
+}

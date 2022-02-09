@@ -18,7 +18,7 @@
         <div class="row equalize sm-equalize-auto rtl">
             
             <div class="col-md-6 half-background style-1">
-                <img src="{% static 'img/staff.jpg' %}">
+                <img src="{{about_img.url}}">
             </div><!-- /.col-md-6 -->
 
             <div class="col-md-6 bg-light-grey">
@@ -26,7 +26,7 @@
                 <div class="themesflat-content-box clearfix tar" data-margin="0 30% 0 5%" data-mobilemargin="0 10% 0 10%">
                     <div class="themesflat-headings style-1 clearfix">
                         <div class="sep has-width w80 accent-bg margin-top-11 clearfix"></div>                                               
-                        <h2 class="heading laleh">به فردای گردشگران پارسه خوش امدید</h2>
+                        <h2 class="heading laleh">تور، هتل و پرواز با گردشگران پارسه</h2>
                         <p class="sub-heading margin-top-30 laleh">پر افتخار ترین آزانس رامسر با بیش از نیم قرن سابقه گردشگری، تحت مدیریت رییس کمیته طبیعت درمانی از دیرباز پزیرای مسافران از سراسر جهان بوده و خلاصه ای از این قبیل</p>
                     </div>
                     <div class="themesflat-spacer clearfix" data-desktop="26" data-mobile="35" data-smobile="35"></div>
@@ -71,7 +71,7 @@
                     </div><!-- /.content-list -->
                     <div class="themesflat-spacer clearfix" data-desktop="42" data-mobile="35" data-smobile="35"></div>
                     <div class="elm-button">
-                        <a href="#"  class="themesflat-button bg-white laleh fowe">رزرو هتل و پرواز</a>
+                        <a href="http://www.eghamatsafar.ir"  class="themesflat-button bg-white laleh fowe">رزرو هتل و پرواز</a>
                     </div>
                 </div><!-- /.themesflat-content-box --> 
                 <div class="themesflat-spacer clearfix" data-desktop="76" data-mobile="60" data-smobile="60"></div>
@@ -97,96 +97,22 @@
 
                                 <div class="themesflat-carousel-box data-effect clearfix" data-gap="30" data-column="3" data-column2="2" data-column3="2" data-auto="true">
                                     <div class="owl-carousel owl-theme">
-
-                                        <div class="themesflat-image-box style-2 clearfix">
-                                            <div class="image-box-item">
-                                                <div class="inner">
-                                                    <div class="thumb data-effect-item">
-                                                        <img src="{% static 'img/cert1.jpg' %}" alt="Image">
-                                                        <div class="overlay-effect bg-color-accent"></div>
-                                                    </div>
-                                                    <div class="text-wrap tar">
-                                                        <h5 class="heading"><a href="#">گواهی بند الف و ب</a></h5>
-                                                        <p class="letter-spacing-01">فقط بهترین آژانس هر استان میتواند این گواهی را بگیرد که ما حول قوه الهی پانزده سال است که این گواهی را دارا هستیم</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div><!-- /.themesflat-image-box -->
-
-                                        <div class="themesflat-image-box style-2 clearfix">
-                                            <div class="image-box-item">
-                                                <div class="inner">
-                                                    <div class="thumb data-effect-item">
-                                                        <img src="{% static 'img/cert2.jpg' %}" alt="Image">
-                                                        <div class="overlay-effect bg-color-accent"></div>
-                                                    </div>
-                                                    <div class="text-wrap tar">
-                                                        <h5 class="heading"><a href="#">تقدیرنامه صنف گردشگری</a></h5>
-                                                        <p class="letter-spacing-01">هر ساله تمام آژانس های گردشگری کشور در دبی دور هم جمع شده و همه به همکاران خود رای میدهند<br> این گواهی از این گردهمایی در دبی میاید</p>
+                                        {% for cert in certificates %}
+                                            <div class="themesflat-image-box style-2 clearfix">
+                                                <div class="image-box-item">
+                                                    <div class="inner">
+                                                        <div class="thumb data-effect-item">
+                                                            <img src="{{cert.img.url}}" alt="Image">
+                                                            <div class="overlay-effect bg-color-accent"></div>
+                                                        </div>
+                                                        <div class="text-wrap tar">
+                                                            <h5 class="heading"><a href="#">{{cert.name}}</a></h5>
+                                                            <p class="letter-spacing-01">{{cert.caption}}</p>
+                                                        </div>
                                                     </div>
                                                 </div>
-                                            </div>
-                                        </div><!-- /.themesflat-image-box -->   
-
-                                        <div class="themesflat-image-box style-2 clearfix">
-                                            <div class="image-box-item">
-                                                <div class="inner">
-                                                    <div class="thumb data-effect-item">
-                                                        <img src="{% static 'img/cert3.jpg' %}" alt="Image">
-                                                        <div class="overlay-effect bg-color-accent"></div>
-                                                    </div>
-                                                    <div class="text-wrap tar">
-                                                        <h5 class="heading"><a href="#">تقدیرنامه رییس جمهور</a></h5>
-                                                        <p class="letter-spacing-01">در جلسه ای خصوصی شخص رییس جمهور وقت ایران برای دلاوری و رشادت کادر فردای گردشگران پارسه این لوح را تقدیم ما کرده است<br> این گواهی از این گردهمایی در دبی میاید</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div><!-- /.themesflat-image-box -->
-                                        <div class="themesflat-image-box style-2 clearfix">
-                                            <div class="image-box-item">
-                                                <div class="inner">
-                                                    <div class="thumb data-effect-item">
-                                                        <img src="{% static 'img/cert2.jpg' %}" alt="Image">
-                                                        <div class="overlay-effect bg-color-accent"></div>
-                                                    </div>
-                                                    <div class="text-wrap tar">
-                                                        <h5 class="heading"><a href="#">لیسانس گردشگران جهانی</a></h5>
-                                                        <p class="letter-spacing-01">فقط بهترین آژانس هر استان میتواند این گواهی را بگیرد که ما حول قوه الهی پانزده سال است که این گواهی را دارا هستیم</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div><!-- /.themesflat-image-box -->
-
-                                        <div class="themesflat-image-box style-2 clearfix">
-                                            <div class="image-box-item">
-                                                <div class="inner">
-                                                    <div class="thumb data-effect-item">
-                                                        <img src="{% static 'img/cert2.jpg' %}" alt="Image">
-                                                        <div class="overlay-effect bg-color-accent"></div>
-                                                    </div>
-                                                    <div class="text-wrap tar">
-                                                        <h5 class="heading"><a href="#">تقدیرنامه صنف گردشگری</a></h5>
-                                                        <p class="letter-spacing-01">هر ساله تمام آژانس های گردشگری کشور در دبی دور هم جمع شده و همه به همکاران خود رای میدهند<br> این گواهی از این گردهمایی در دبی میاید</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div><!-- /.themesflat-image-box -->   
-
-                                        <div class="themesflat-image-box style-2 clearfix">
-                                            <div class="image-box-item">
-                                                <div class="inner">
-                                                    <div class="thumb data-effect-item">
-                                                        <img src="{% static 'img/cert1.jpg' %}" alt="Image">
-                                                        <div class="overlay-effect bg-color-accent"></div>
-
-                                                    </div>
-                                                    <div class="text-wrap tar">
-                                                        <h5 class="heading"><a href="#">تقدیرنامه رییس جمهور</a></h5>
-                                                        <p class="letter-spacing-01">در جلسه ای خصوصی شخص رییس جمهور وقت ایران برای دلاوری و رشادت کادر فردای گردشگران پارسه این لوح را تقدیم ما کرده است<br> این گواهی از این گردهمایی در دبی میاید</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div><!-- /.themesflat-image-box -->
+                                            </div><!-- /.themesflat-image-box -->
+                                        {% endfor %}
 
 
                                     </div>

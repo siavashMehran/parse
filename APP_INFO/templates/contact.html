@@ -1,0 +1,111 @@
+{% extends 'base/base.html' %}
+
+{% block path %}پشتیبانی{% endblock path %}
+
+{% block body %}
+<div id="content-wrap">
+    <div id="site-content" class="site-content clearfix">
+        <div id="inner-content" class="inner-content-wrap">
+           <div class="page-content">
+               <!-- CONTACT -->
+                <div class="row-contact">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="themesflat-spacer clearfix" data-desktop="61" data-mobile="60" data-smobile="60"></div>
+                            </div><!-- /.col-md-12 -->
+                        </div><!-- /.row -->
+                        <div class="row">
+
+                            <div class="col-md-6">
+                                <div class="themesflat-spacer clearfix" data-desktop="0" data-mobile="0" data-smobile="35"></div>
+                                            <div class="themesflat-content-box rtl" data-margin="0 0 0 18px" data-mobilemargin="0 0 0 0">
+                                                <div class="themesflat-headings style-1 clearfix">
+                                                    <h2 class="heading">FAQs</h2>
+                                                    <div class="sep has-width w80 accent-bg margin-top-11 clearfix"></div>                                          
+                                                </div>
+                                                <div class="themesflat-spacer clearfix" data-desktop="38" data-mobile="35" data-smobile="35"></div>
+                                                <div class="themesflat-accordions style-1 has-icon icon-left iconstyle-1 clearfix">
+                                                    {% for faq in faqs %}   
+                                                    <div class="accordion-item">
+                                                        <h3 class="accordion-heading"><span class="inner">{{faq.question}}</span></h3>
+                                                        <div class="accordion-content">
+                                                            <div>{{faq.answer}}</div>
+                                                        </div>
+                                                    </div><!-- /.accordion-item -->
+                                                    {% endfor %}
+                                                    
+                                                </div><!-- /.themesflat-accordion -->
+                                            </div><!-- /.themesflat-content-box --> 
+                                <div class="themesflat-spacer clearfix" data-desktop="0" data-mobile="0" data-smobile="35"></div>
+                                
+                                <div class="themesflat-spacer clearfix" data-desktop="36" data-mobile="35" data-smobile="35"></div>
+                                <iframe class="map-embed" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3099.7558984221964!2d50.6677792571388!3d36.90026250290779!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3f8b0b52851abd35%3A0x16f0e8c0baedb8cc!2sPuzzle%20pizza!5e0!3m2!1sen!2s!4v1643633717346!5m2!1sen!2s" allowfullscreen="" loading="lazy"></iframe>
+                                <div class="themesflat-spacer clearfix" data-desktop="20" data-mobile="35" data-smobile="35"></div>
+                                
+                            </div><!-- /.col-md-6 -->
+
+
+                            <div class="col-md-6">
+                                <div class="themesflat-headings style-1 clearfix rtl">
+                                    <h2 class="heading">از متخصصان بپرسید</h2>
+                                    <div class="sep has-width w80 accent-bg clearfix"></div>                                               
+                                    <p class="sub-heading">ما سعی کرده ایم که پر تکرار ترین سوالات مشتریان یا در اینجا جواب بدهیم اما اگر موضوع مورد نظر شما جواب داده نشده از طریق فرم زیر میتوانید از متخصصان با تجربه گردشگران پارسه کمک بگیرید</p>
+                                    <p class="sub-heading">{{form.error}}</p>
+                                </div>
+                                <div class="themesflat-spacer clearfix" data-desktop="36" data-mobile="35" data-smobile="35"></div>
+                                <div class="themesflat-contact-form style-3 clearfix rtl">
+                                    <form id="contactform" method="POST" class="contact-form wpcf7-form">
+                                        {% csrf_token %}
+                                        <span class="wpcf7-form-control-wrap your-name">
+                                            <input type="text" tabindex="1" id="name" name="user_name" value="" class="wpcf7-form-control" placeholder="نام" required>
+                                        </span>
+                                        <span class="wpcf7-form-control-wrap your-phone">
+                                            <input type="text" tabindex="2" id="phone" name="user_contact_info" value="" class="wpcf7-form-control" placeholder="اطلاعات تماس (ایمیل یا تلفن همراه)*">
+                                        </span>
+                                        <span class="wpcf7-form-control-wrap your-subject">
+                                            <input type="text" tabindex="4" id="subject" name="title" value="" class="wpcf7-form-control" placeholder="موضوع">
+                                        </span>
+                                        <span class="wpcf7-form-control-wrap your-message">
+                                           <textarea name="message" tabindex="5" cols="40" rows="10" class="wpcf7-form-control wpcf7-textarea" placeholder="پیام *" required ></textarea>
+                                        </span>
+                                        <div class="themesflat-spacer clearfix" data-desktop="36" data-mobile="35"></div>
+                                        <span class="wrap-submit">
+                                            <button type="submit" class="submit wpcf7-form-control wpcf7-submit">Submit</button>
+                                            <!-- <button type="submit"></button> -->
+                                        </span>
+                                        
+                                    </form>
+                                </div><!-- /.themesflat-contact-form -->
+                                <div class="themesflat-spacer clearfix" data-desktop="36" data-mobile="35" data-smobile="35"></div>
+                                <div class="google-mad-embed"></div>
+                            </div><!-- /.col-md-6 -->
+                            
+
+                        </div><!-- /.row -->
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="themesflat-spacer clearfix" data-desktop="78" data-mobile="60" data-smobile="60"></div>
+                            </div><!-- /.col-md-12 -->
+                        </div><!-- /.row -->
+                    </div><!-- /.container -->
+                </div>
+                <!-- END CONTACT -->
+           </div><!-- /.page-content -->
+        </div><!-- /#inner-content -->
+    </div><!-- /#site-content -->
+</div><!-- /#content-wrap -->
+{% endblock body %}
+
+{% block scripts %}
+<script>
+    const submitBtn = document.querySelector('#submit')
+    const contactForm = document.querySelector('#contactform')
+
+    submitBtn.addEventListener('click', (e)=>{
+        contactForm.submit()
+        
+    })
+</script>
+{% endblock scripts %}
+
