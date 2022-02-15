@@ -1,15 +1,7 @@
 from django.contrib import admin
 
-from .models import FAQ, Certificates, ContactUs, SiteSettings, Testimonial
+from .models import FAQ, Certificates, ContactUs, SiteSettings, Testimonial, PageHeaders
 
-@admin.register(ContactUs)
-class ContactUsAdmin(admin.ModelAdmin):
-    list_display = ['user_name', 'title']
-
-
-@admin.register(Testimonial)
-class TestimonialAdmin(admin.ModelAdmin):
-    list_display = ['name', 'tour_loc']
 
 @admin.register(SiteSettings)
 class SiteSettingsAdmin(admin.ModelAdmin):
@@ -22,11 +14,18 @@ class SiteSettingsAdmin(admin.ModelAdmin):
         ('About Us', {"fields": ('site_story_short', 'site_story_long', 'about_us_img') } ),
         
         )
+
+@admin.register(ContactUs)
+class ContactUsAdmin(admin.ModelAdmin):
+    list_display = ['user_name', 'title']
+
+
+@admin.register(Testimonial)
+class TestimonialAdmin(admin.ModelAdmin):
+    list_display = ['name', 'tour_loc']
+
     
-@admin.register(Certificates)
+@admin.register(Certificates, FAQ, PageHeaders)
 class CertificateAdmin(admin.ModelAdmin):
     list_display = ['__str__']
 
-@admin.register(FAQ)
-class FAQAdmin(admin.ModelAdmin):
-    list_display = ['__str__']

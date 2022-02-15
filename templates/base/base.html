@@ -1,118 +1,114 @@
 {% load render_partial %}
 {% load static %}
-<!DOCTYPE html>
-
+<!doctype html>
+<html lang="fa">
 <head>
-    <!-- Basic Page Needs -->
+    <!-- Required meta tags -->
     <meta charset="utf-8">
-    <!--[if IE]><meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'><![endif]-->
-    <title>{% block title %}{% endblock title %}</title>
-
-    <meta name="author" content="فردای گردشگران پارسه">
-
-    {% comment %} for meta tags {% endcomment %}
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     {% block meta %}{% endblock meta %}
-
-    <!-- Mobile Specific Metas -->
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-
-    <!-- Theme Style -->
-    <link rel="stylesheet" type="text/css" href="{% static 'assets/css/style.css' %}">
-
-    <!-- Colors -->
-    <link rel="stylesheet" type="text/css" href="{% static 'assets/css/colors/color1.css' %}" id="colors">
-
-    <!-- Favicon and Touch Icons  -->
-    <link rel="shortcut icon" href="{% static 'assets/icon/favicon.png' %}">
-    <link rel="apple-touch-icon-precomposed" href="{% static 'assets/icon/apple-touch-icon-158-precomposed.png' %}">
-
-
+    <!-- Bootstrap CSS -->
+    <link href="{% static 'css/style.css' %}" type="text/css" rel="stylesheet"/>
+    <link href="{% static 'css/bootstrap-datepicker.css' %}" type="text/css" rel="stylesheet"/>
+    <!-- Favicon -->
+    <!-- Favicon and Touch Icons -->
+    <link href="{% static 'images/favicon.png' %}" rel="shortcut icon" type="image/png">
+    <link href="{% static 'images/apple-touch-icon.png' %}" rel="apple-touch-icon">
+    <link href="{% static 'images/apple-touch-icon-72x72.png' %}" rel="apple-touch-icon" sizes="72x72">
+    <link href="{% static 'images/apple-touch-icon-114x114.png' %}" rel="apple-touch-icon" sizes="114x114">
+    <link href="{% static 'images/apple-touch-icon-144x144.png' %}" rel="apple-touch-icon" sizes="144x144">
+    <title>{% block title %}برو سفر{% endblock title %}</title>
 </head>
 
-<body class="header-fixed page no-sidebar {% block body_classes %}header-style-2{% endblock body_classes %} menu-has-search">
-
-<div id="wrapper" class="animsition">
-    <div id="page" class="clearfix">
-        <!-- Header Wrap -->
-        <div id="site-header-wrap">
-            {% render_partial  "partials.views.partial_header" %}
-        </div><!-- #site-header-wrap -->
-
-        {% block bread %}
-        <div class="themesflat-spacer clearfix" data-desktop="50" data-mobile="0" data-smobile="0"></div>
-        <div id="featured-title" class="featured-title clearfix">
-            <div id="featured-title-inner" class="container clearfix">
-                <div class="featured-title-inner-wrap">                    
-                    <div class="featured-title-heading-wrap">
-                        <h1 class="feautured-title-heading tar">
-                            {% block path %}{% endblock path %}
-                        </h1>
+<body>
+    {% render_partial  "partials.views.partial_header" %}
+    <!-- =======================
+        header End-->
+    
+    {% block body %}{% endblock body %}
+    
+    <!-- =======================
+        footer  -->
+    <footer class="footer footer-dark pt-6 position-relative">
+        <div class="footer-content">
+            <div class="container">
+                <div class="row">
+                    <!-- Footer widget 1 -->
+                    <div class="col-md-3 col-sm-6 order-sm-1">
+                        <div class="widget address"><a href="index.html" class="footer-logo mb-3 d-block">
+                            <!-- SVG Logo Start -->
+                            <img src="{% static 'images/logo-footer.png' %}">
+                            <!-- SVG Logo End -->
+                        </a>
+                            <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک
+                                است.</p>
+                        </div>
                     </div>
-                </div><!-- /.featured-title-inner-wrap -->
-            </div><!-- /#featured-title-inner -->            
+
+                    <div class="col-md-6 mb-4 mb-sm-0 order-sm-2">
+                        <div class="bg-grad p-4 p-sm-5 border-radius-3 pattern-overlay-2">
+                            <div class="all-text-white">
+                                <h3>پلتفرم رزر بلیط آنلاین ما</h3>
+                                <p class="m-0">
+                                    اقامت سفر نام پلتفرم رزرو پرواز و اتوبوس و قایق و این چیزاست، حتما سر بزنید
+                                </p>
+                            </div>
+                            <div class="mt-3">
+                                <button class="btn btn-dark mb-0">برو به اقامت سفر</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Footer widget 5 -->
+                    <div class="col-md-3 col-sm-6 order-sm-2">
+                        <div class="widget address">
+                            <ul class="list-unstyled">
+                                <li class="media mb-3"><i class="fas fa-map-marked-alt mr-3 display-8"></i><p>رامسر-رمک-پشت کاخ</p></li>
+                                <li class="media mb-3"><i class="mr-3 display-8 fas fa-headphones-alt"></i><p class="phone-no">021 - 234 2345</p>
+                                </li>
+                                <li class="media mb-3"><i class="mr-3 display-8 far fa-envelope"></i> info@eghamatsafar.com</li>
+                                <li class="media mb-3"><i class="mr-3 display-8 far fa-clock"></i>
+                                    <p>شنبه - پنجشنبه: <strong> 18:00 - 09:00</strong><br>
+                                          جمعه: <strong>تعطیل است</strong>
+                                    </p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    
+                </div>
+            </div>
         </div>
-        <div class="themesflat-spacer clearfix" data-desktop="50" data-mobile="0" data-smobile="0"></div>
-        {% endblock bread %}
-
-        <!-- Main Content -->
-        <div id="main-content" class="site-main clearfix">
-
-            {% block body %}{% endblock body %}
-
-        </div><!-- /#main-content -->
-
-        {% block bottom %}
-        <!-- Bottom -->
-        <div id="bottom" class="clearfix has-spacer">
-            <div id="bottom-bar-inner" class="container">
-                <div class="bottom-bar-inner-wrap">
-
-                    <div class="bottom-bar-menu">
-                        <ul class="bottom-nav">
-                            <li class="menu-item">
-                                <a href="home.html">به پشتیبانی تیکت بزنید</a>
-                            </li>
-                            <li class="menu-item">
-                                <a href="home.html">سوالات متداول</a>
-                            </li>
-                            
-                        </ul>
-                    </div><!-- /.bottom-bar-menu -->
-                </div><!-- /.bottom-bar-inner-wrap -->                
-            </div><!-- /#bottom-bar-inner -->
-        </div><!-- /#bottom -->
-        {% endblock bottom %}
-    </div><!-- /#page -->
-</div><!-- /#wrapper -->
-
-<a id="scroll-top"></a>
-
-<!-- Javascript -->
-<script src="{% static 'assets/js/jquery.min.js' %}"></script>
-<script src="{% static 'assets/js/plugins.js' %}"></script>
-<script src="{% static 'assets/js/tether.min.js' %}"></script>
-<script src="{% static 'assets/js/bootstrap.min.js' %}"></script>
-<script src="{% static 'assets/js/animsition.js' %}"></script>
-<script src="{% static 'assets/js/owl.carousel.min.js' %}"></script>
-<script src="{% static 'assets/js/countto.js' %}"></script>
-<script src="{% static 'assets/js/equalize.min.js' %}"></script>
-<script src="{% static 'assets/js/jquery.isotope.min.js' %}"></script>
-<script src="{% static 'assets/js/owl.carousel2.thumbs.js' %}"></script>
-
-<script src="{% static 'assets/js/jquery.cookie.js' %}"></script>
-<script src="{% static 'assets/js/gmap3.min.js' %}"></script>
-<script src="{% static 'assets/js/shortcodes.js' %}"></script>
-<script src="{% static 'assets/js/main.js' %}"></script>
-
-<!-- Revolution Slider -->
-<script src="{% static 'includes/rev-slider/js/jquery.themepunch.tools.min.js' %}"></script>
-<script src="{% static 'includes/rev-slider/js/jquery.themepunch.revolution.min.js' %}"></script>
-<script src="{% static 'assets/js/rev-slider.js' %}"></script>
-
-
-{% comment %} additional scripts {% endcomment %}
-{% block scripts %}{% endblock scripts %}
-
-</body>
+        <div class="divider mt-3"></div>
+        <!--footer copyright -->
+        <div class="footer-copyright py-3">
+            <div class="container">
+                <div class="d-md-flex justify-content-between align-items-center py-3 text-center text-md-left">
+                    <!-- copyright text -->
+                    <div class="copyright-text">© 2019 کلیه حقوق این سایت توسط <a href="#!">فردای گردشگران پارسه</a> محفوظ است <a
+                            href="#!">.</a></div>
+                    <!-- copyright links-->
+    
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- =======================
+        footer  -->
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="{% static 'js/jquery.min.js' %}" type="text/javascript"></script>
+    <script src="{% static 'js/popper.min.js' %}" type="text/javascript"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}" type="text/javascript"></script>
+    <script src="{% static 'js/functions.js' %}" type="text/javascript"></script>
+    <script src="{% static 'js/owl.carousel.min.js' %}" type="text/javascript"></script>
+    <script src="{% static 'js/slick.js' %}" type="text/javascript"></script>
+    <script src="{% static 'js/swiper.min.js' %}" type="text/javascript"></script>
+    <script src="{% static 'js/main.js' %}" type="text/javascript"></script>
+    <script src="{% static 'js/jquery.fancybox.min.js' %}" type="text/javascript"></script>
+    <script src="{% static 'js/bootstrap-datepicker.min.js' %}" type="text/javascript"></script>
+    <script src="{% static 'js/jquery-ui.min.js' %}" type="text/javascript"></script>
+    </body>
 </html>
 

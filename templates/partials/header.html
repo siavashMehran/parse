@@ -1,57 +1,29 @@
-{% load static %}
-
-
-<!-- Header -->
-<header id="site-header">
-    <div id="site-header-inner" class="container">                    
-        <div class="wrap-inner clearfix">
-            <div id="site-logo" class="clearfix">
-                <div id="site-log-inner">
-                    <a href="{% url 'home' %}" rel="home" class="main-logo">
-                        <img class="logo-img" src="{{logo.url}}" alt="PARSEH" width="45" height="45" data-retina="{% static 'img/LOGOMAIN.png' %}" data-width="30" data-height="30">
-                    </a>
-                </div>
-            </div><!-- /#site-logo -->
-
-            <div class="mobile-button">
-                <span></span>
-            </div><!-- /.mobile-button -->
-
-            <nav id="main-nav" class="main-nav laleh fowe">
-                <ul id="menu-primary-menu" class="menu">
-                    <li class="menu-item {% if request.path == '/' %} current-menu-item{% endif %}">
-                        <a href="{% url 'home' %}">خانه</a>
-                    </li>
-                    <li class="menu-item{% if 'tour' in request.path %} current-menu-item{% endif %}">
-                        <a href="{% url 'tourdetail' %}"> تور ها </a>
-                        
-                    </li>
-                    <li class="menu-item{% if request.path == '/about' %} current-menu-item{% endif %}">
-                        <a href="{% url 'about' %}">افتخارات </a>
-                        
-                    </li>
-                    <li class="menu-item{% if request.path == '/contact' %} current-menu-item{% endif %}">
-                        <a href="{% url 'contact' %}">پشتیبانی</a>
-                        
-                    </li>
-                    <li class="menu-item menu-item-has-children{% if request.path == '/blog' %} current-menu-item{% endif %}">
-                        <a href="page-blog.html">مجله گردشگری</a>
-                        <ul class="sub-menu">
-                            <li class="menu-item"><a href="page-testimonial.html">راهنمایی سفر</a></li>
-                            <li class="menu-item"><a href="page-pricing.html">جا های دیدنی ایران</a></li>
-                            <li class="menu-item"><a href="page-pricing.html">اخبار گردشگری</a></li>
-                        </ul>
-                    </li>
-                    <div id="header-search">
-                        <a href="/en/" class="header-search-icon">
-                            <span class="search-icon fa fa-search">
-                            </span>
-                        </a>
-                    </div>
-                    
+<header class="header-static navbar-sticky navbar-light shadow">
+    <!-- Logo Nav Start -->
+    <nav class="navbar navbar-expand-xl">
+        <div class="container">
+            <!-- Logo -->
+            <a class="navbar-brand ml3rem" href="/"><img src="{{logo.url}}" alt="parseh travel agency logo">PARSEH</a>
+            <!-- Menu opener button -->
+            <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="ناوبری را تغییر دهید"><span class="navbar-toggler-icon"> </span></button>
+            <!-- Main Menu Start -->
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <ul class="navbar-nav">
+                    <!-- Menu item 1 Demos-->
+                    <li class="nav-item active"><a class="nav-link" href="{% url 'home' %}">خانه</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'about' %}">درباره ما</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'contact' %}">پشتیبانی</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'tours' %}">تور ها</a></li>
                 </ul>
-            </nav><!-- /#main-nav -->
-
-        </div><!-- /.wrap-inner -->                    
-    </div><!-- /#site-header-inner -->
-</header><!-- /#site-header -->
+            </div>
+            <!-- Main Menu End -->
+            <!-- Header Extras Start-->
+            <div class="navbar-nav">
+                <!-- extra item Btn-->
+                <div class="nav-item border-0 d-none d-lg-inline-block align-self-center"><a href="#" class="btn btn-primary">رزرو تور</a></div>
+            </div>
+            <!-- Header Extras End-->
+        </div>
+    </nav>
+    <!-- Logo Nav End -->
+</header>

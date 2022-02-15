@@ -1,0 +1,19 @@
+{% extends 'base/base.html' %}
+
+{% block body %}
+<section class="error-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="error-box text-center">
+                    <h1>404</h1>
+                    <h4>صفحه مورد نظر شما پیدا نشد.</h4>
+                    <p>لطفا دوباره سعی کنید.</p>
+                    <a href="{{request.META.HTTP_REFERER}}"><i class="la la-home"></i>بازگشت به صفحه اصلی</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+{% endblock body %}

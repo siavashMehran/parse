@@ -15,15 +15,12 @@ class ContactUsModelForm(ModelForm):
         model = ContactUs
         fields = '__all__'
 
-        CSS_CLASSES = {
-            'TextInput' : 'txt-s-101 cl3 plh1 size-a-46 bo-all-1 bocl15 focus1 p-rl-20',
-            'TextArea' : 'txt-s-120 cl3 plh1 size-a-26 bo-all-1 bocl15 focus1 p-rl-20 p-tb-10',
-        }
+        
         widgets = {
-            'user_name'     : TextInput (attrs={'class': CSS_CLASSES['TextInput'], 'placeholder':'*نام'    , 'required':''}),
-            'user_contact_info'    : EmailInput(attrs={'class': CSS_CLASSES['TextInput'], 'placeholder':'اطلاعات تماس : (تلفن یا ایمیل)'}),
-            'title'         : TextInput (attrs={'class': CSS_CLASSES['TextInput'], 'placeholder':'موضوع'}),
-            'message'       : Textarea  (attrs={'class': CSS_CLASSES['TextArea']}),
+            'user_name'     : TextInput (attrs={'class': 'form-control', 'placeholder':'*نام'    , 'required':''}),
+            'user_contact_info'    : EmailInput(attrs={'class': 'form-control', 'placeholder':'اطلاعات تماس : (تلفن یا ایمیل)'}),
+            'title'         : TextInput (attrs={'class': 'form-control', 'placeholder':'موضوع'}),
+            'message'       : Textarea  (attrs={'class': 'form-control'}),
         }
 
 

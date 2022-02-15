@@ -6,8 +6,13 @@ from django.db.models.signals import pre_save
 from django.dispatch import receiver
 
 
-#upload
-from .upload import media_certificates_upload_path, media_logo_upload_path, media_testimonial_upload_path
+# media files upload path
+from .upload import (
+    media_certificates_upload_path, 
+    media_logo_upload_path, 
+    media_testimonial_upload_path,
+    media_header_image_upload_path,
+    )
 
 
 class SiteSettings(models.Model):
@@ -64,7 +69,6 @@ def pre_save_reciever(sender:SiteSettings, instance, *args, **kwargs):
 
 
 # contact us form
-# this will be presented to user using modelForm
 class ContactUs(models.Model):
 
     help_text = {
@@ -80,7 +84,7 @@ class ContactUs(models.Model):
     message    = models.TextField(max_length=300, blank=False, help_text=help_text['message'])
 
     def __str__(self):
-        return self.title
+        return self.title or 'Untitled Message !'
 
     class Meta:
         verbose_name = 'تماس با ما'
@@ -88,11 +92,6 @@ class ContactUs(models.Model):
 
 
 
-
-
-# testimonials of customers saying how good we are
-# a testimony is very similar to OurStaff model since it
-# need roughly the same things, "it represents aperson"
 class Testimonial(models.Model):
 
     # to keep help texts more organized
@@ -130,27 +129,7 @@ class Certificates(models.Model):
     def __str__(self):
         return self.name
 
-# represents the company staff and there can onley be 3 or 4 of them
-# class OurStaff(models.Model):
 
-#     # to keep help texts more organized
-#     help_text = {
-#         'title'  :  'job title or a descriptive word',
-#         'image'  :  '300 x 400',
-#     }
-
-
-#     name    = models.CharField(max_length=40, blank=False)
-#     title   = models.CharField(max_length=40, blank=False, help_text=help_text['title'])
-#     image   = models.ImageField(upload_to='staff_pics/', blank=False, help_text=help_text['image'])
-
-
-#     def __str__(self) :
-#         return f'{self.name} {self.title}'
-
-#     class Meta:
-#         verbose_name = 'Staff'
-#         verbose_name_plural = 'Staff'
 
 class FAQ(models.Model):
 
@@ -163,3 +142,12 @@ class FAQ(models.Model):
 
     question = models.CharField('سوال', max_length=300, blank=False)
     answer = models.TextField('جواب', blank=False, max_length=400)
+
+class PageHeaders(models.Model):
+
+    contact_us_header_image = models.FileField('تصویر هدر صفحه تماس با ما', upload_to=media_header_image_upload_path, blank=False)
+    about_us_header_image = models.FileField('تصویر هدر صفحه درباره ما', upload_to=media_header_image_upload_path, blank=False)
+
+    def __str__(self):
+        return 'Pages Header Images'
+    

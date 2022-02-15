@@ -1,0 +1,20 @@
+<!-- =======================
+          newsletter -->
+          <section class="bg-light pattern-overlay-1-dark">
+            <div class="container">
+              <div class="col-md-12 col-lg-9 mx-auto p-4 p-sm-5">
+                <div class="text-center px-0 px-sm-5">
+                  <p class="mb-3 lead">عضو خبرنامه ماشوید و ماهانه آفر های جذاب برای سفر دریافت کنید</p>
+                  <form action="{% url 'newsletter_subscribe' %}" method="post">
+                    <div class="input-group px-0 px-md-5">
+                        {% csrf_token %}
+                      <input class="form-control border-radius-right-0 border-right-0 bg-transparent" type="email" name="email" placeholder="ایمیل خود را وارد کنید">
+                      <button type="submit" class="btn btn-grad mb-0 border-radius-left-0"> <span class=" d-md-block">میخواهم تخفیف ها را دریافت کنم</span> <span class="d-md-none"><i class="fab fa-paper-plane-o m-0"></i></span> </button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </section>
+          <!-- =======================
+              newsletter --> 

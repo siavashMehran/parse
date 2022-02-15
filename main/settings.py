@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     #apps
     'APP_INFO',
     'APP_TOUR',
+    'APP_NEWSLETTER',
     'partials'
 ]
 

@@ -2,132 +2,98 @@
 {% load static %}
 
 
-{% block path %}درباره ما{% endblock path %}
-{% comment %} {% block bread %}{% endblock bread %} {% endcomment %}
-
-
-
-
-
-
 {% block body %}
-
-<!-- ABOUT -->
-<div class="row-about">
-    <div class="container-fluid">
-        <div class="row equalize sm-equalize-auto rtl">
-            
-            <div class="col-md-6 half-background style-1">
-                <img src="{{about_img.url}}">
-            </div><!-- /.col-md-6 -->
-
-            <div class="col-md-6 bg-light-grey">
-                <div class="themesflat-spacer clearfix" data-desktop="64" data-mobile="35" data-smobile="35"></div>
-                <div class="themesflat-content-box clearfix tar" data-margin="0 30% 0 5%" data-mobilemargin="0 10% 0 10%">
-                    <div class="themesflat-headings style-1 clearfix">
-                        <div class="sep has-width w80 accent-bg margin-top-11 clearfix"></div>                                               
-                        <h2 class="heading laleh">تور، هتل و پرواز با گردشگران پارسه</h2>
-                        <p class="sub-heading margin-top-30 laleh">پر افتخار ترین آزانس رامسر با بیش از نیم قرن سابقه گردشگری، تحت مدیریت رییس کمیته طبیعت درمانی از دیرباز پزیرای مسافران از سراسر جهان بوده و خلاصه ای از این قبیل</p>
-                    </div>
-                    <div class="themesflat-spacer clearfix" data-desktop="26" data-mobile="35" data-smobile="35"></div>
-                    <div class="content-list">
-
-                        <div class="themesflat-list has-icon style-1 icon-left clearfix laleh">
-                            <div class="inner">
-                                <span class="item">
-                                    <span class="text">ارایه کننده خدمات هتل مطابق با بودجه شما</span>
-                                    <span class="icon"><i class="fa fa-check-square"></i></span>
-                                </span>
-                            </div>
-                        </div><!-- /.themeslat-list -->
-                        
-                        <div class="themesflat-list has-icon style-1 icon-left clearfix laleh">
-                            <div class="inner">
-                                <span class="item">
-                                    <span class="text">خوبی ما شماره دو</span>
-                                    <span class="icon"><i class="fa fa-check-square"></i></span>
-                                </span>
-                            </div>
-                        </div><!-- /.themeslat-list -->
-                        
-                        <div class="themesflat-list has-icon style-1 icon-left clearfix laleh">
-                            <div class="inner">
-                                <span class="item">
-                                    <span class="text">ما بسیار خدمات داریم که خوب است</span>
-                                    <span class="icon"><i class="fa fa-check-square"></i></span>
-                                </span>
-                            </div>
-                        </div><!-- /.themeslat-list -->
-                        
-                        <div class="themesflat-list has-icon style-1 icon-left clearfix laleh">
-                            <div class="inner">
-                                <span class="item">
-                                    <span class="text">برای محتوای این سطر ها به کمک نیاز است</span>
-                                    <span class="icon"><i class="fa fa-check-square"></i></span>
-                                </span>
-                            </div>
-                        </div><!-- /.themeslat-list -->
-                        
-                    </div><!-- /.content-list -->
-                    <div class="themesflat-spacer clearfix" data-desktop="42" data-mobile="35" data-smobile="35"></div>
-                    <div class="elm-button">
-                        <a href="http://www.eghamatsafar.ir"  class="themesflat-button bg-white laleh fowe">رزرو هتل و پرواز</a>
-                    </div>
-                </div><!-- /.themesflat-content-box --> 
-                <div class="themesflat-spacer clearfix" data-desktop="76" data-mobile="60" data-smobile="60"></div>
-            </div><!-- /.col-md-6 -->
-
-         
-        </div><!-- /.row -->
-    </div><!-- /.container-fluid -->
-</div>
-<!-- END ABOUT -->
-
-<div id="content-wrap">
-    <div id="site-content" class="site-content clearfix">
-        <div id="inner-content" class="inner-content-wrap">
-           <div class="page-content">
-                <!-- SERVICES -->
-                <div class="row-services">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-md-12">
-
-                                <div class="themesflat-spacer clearfix" data-desktop="81" data-mobile="60" data-smobile="60"></div>
-
-                                <div class="themesflat-carousel-box data-effect clearfix" data-gap="30" data-column="3" data-column2="2" data-column3="2" data-auto="true">
-                                    <div class="owl-carousel owl-theme">
-                                        {% for cert in certificates %}
-                                            <div class="themesflat-image-box style-2 clearfix">
-                                                <div class="image-box-item">
-                                                    <div class="inner">
-                                                        <div class="thumb data-effect-item">
-                                                            <img src="{{cert.img.url}}" alt="Image">
-                                                            <div class="overlay-effect bg-color-accent"></div>
-                                                        </div>
-                                                        <div class="text-wrap tar">
-                                                            <h5 class="heading"><a href="#">{{cert.name}}</a></h5>
-                                                            <p class="letter-spacing-01">{{cert.caption}}</p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div><!-- /.themesflat-image-box -->
-                                        {% endfor %}
-
-
-                                    </div>
-                                </div><!-- /.themesflat-carousel-box -->
-
-                                <div class="themesflat-spacer clearfix" data-desktop="45" data-mobile="60" data-smobile="60"></div>
-
-                            </div><!-- /.col-md-12 -->
-                        </div><!-- /.row -->
-                    </div><!-- /.container -->
-                </div>
-                <!-- END SERVICES -->
-           </div>
+<!-- =======================
+	Banner innerpage -->
+    <div class="innerpage-banner left bg-overlay-dark-7 py-7" style="background:url({{header_image.url}}) repeat; background-size:cover;">
+        <div class="container">
+          <div class="row all-text-white">
+            <div class="col-md-12 align-self-center">
+              <h1 class="innerpage-title">پشتیبانی</h1>
+              <h6 class="subtitle">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است.</h6>
+              <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                  <li class="breadcrumb-item"><a href="/"><i class="ti-home"></i>خانه</a></li>
+                  <li class="breadcrumb-item active">پشتیبانی</li>
+                </ol>
+              </nav>
+            </div>
+          </div>
         </div>
-    </div>
-</div>
+      </div>
+      <!-- =======================
+          Banner innerpage --> 
+          <section class="grayBG pt80 pb80">
+            <div class="container ">
+                <div class="row">
+                  <div class="col-md-8 mx-auto text-center mb-5">
+                    <h2 class="title text-center">گردشگران پارسه، متخصص در تور رامسر</h2>
+                    <h3 class="fs15">قدیمی ترین آژانس هواپیمایی و گردشگری در رامسر، با تخصص در تور های رامسر و تور های شخصی</h3>
+                  </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="feature-box h-100 text-center px-4 py-5">
+                            <div class="feature-box-icon"><img class="w-25" src="{% static 'images/tour/check-mark.svg' %}" alt=""></div>
+                            <h3 class="feature-box-title">رزرو هتل</h3>
+                            <p class="feature-box-desc">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده
+                                از طراحان گرافیک است.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="feature-box h-100 text-center all-text-white bg-grad px-4 py-5 border-radius-3">
+                            <div class="feature-box-icon"><img class="w-25" src="{% static 'images/tour/editor.svg' %}" alt=""></div>
+                            <h3 class="feature-box-title">رزرو بلیط</h3>
+                            <p class="feature-box-desc">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده
+                                از طراحان گرافیک است.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="feature-box h-100 text-center px-4 py-5">
+                            <div class="feature-box-icon"><img class="w-25" src="{% static 'images/tour/envelope.svg' %}" alt=""></div>
+                            <h3 class="feature-box-title">تور شگفت انگیز</h3>
+                            <p class="feature-box-desc">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده
+                                از طراحان گرافیک است.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
+
+        
+
+        <section class="team team-overlay social-hover pt80 pb80">
+          <div class="divider divider-large mt5"></div>
+          <div class="container">
+
+            <div class="row">
+              <div class="col-md-8 mx-auto text-center mb-5">
+                <p class="title text-center fs15">جوایز و افتخارات ما</p>
+              </div>
+            </div>
+
+            <div class="row">
+              {% for certificate in certificates %}
+                <div class="col-md-4">
+                  <div class="team-item hover-overlay text-center">
+                    <div class="team-avatar">
+                        <img src="{{certificate.img.url}}" alt="">
+                    </div>
+                    <div class="team-desc">
+                      <h5 class="team-name team-position">{{certificate.name}}</h5>
+                      <p>{{certificate.caption}}</p>
+                      <ul class="social-icons si-colored-on-hover"></ul>
+                    </div>
+                  </div>
+              </div>
+              {% endfor %}
+            </div>
+          </div>
+      </section>
+
+
+
+      {% include 'include/newsletter.html' %}
+      
 {% endblock body %}
