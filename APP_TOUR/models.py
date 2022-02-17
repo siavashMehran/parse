@@ -1,6 +1,9 @@
+import imp
 from django.db import models
 from django.dispatch import receiver
 from django.db.models.signals import pre_save
+from tinymce.models import HTMLField
+from APP_CATEGORY.models import TourCategory
 
 
 
@@ -15,9 +18,12 @@ class Tour(models.Model):
 
 
     name = models.CharField('اسم تور', max_length=100, blank=False)
-    has_off = models.BooleanField('تخفیف دار', blank=False, default=False)
+    caption = models.CharField('توضیحات کوتاه', max_length=120, blank=False)
+    description = HTMLField('توضیحات کوتاه', blank=False)
 
     slug = models.SlugField(blank=True, allow_unicode=True, max_length=30, unique=True)
+
+    category = models.ForeignKey(TourCategory, on_delete=models.CASCADE)
 
     transports = (
         ('aeropalne', 'هواپیما'),
@@ -46,10 +52,18 @@ class Residence(models.Model):
 
     tour = models.OneToOneField(Tour, on_delete=models.CASCADE)
     name = models.CharField('نام محل', max_length=80, blank=False)
-    rating = models.CharField('ستاره', max_length=80, blank=True)
+    rating = models.IntegerField('ستاره', blank=True)
     room_service = models.TextField('روم سرویس', max_length=400, blank=True)
     duration = models.CharField('مدت اقامت', max_length=80, blank=False)
 
+
+
+    # booleans
+    parking = models.BooleanField('پارکینگ دارد', default=False)
+    food   = models.BooleanField('غذا دارد', default=False)
+    wifi   = models.BooleanField('wi-fi', default=False)
+    tv     = models.BooleanField('تلویزیون', default=False)
+    aircon = models.BooleanField('سیستم تهویه', default=False)
 
 
     def room_service_table(self):
