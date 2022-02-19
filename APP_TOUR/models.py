@@ -9,6 +9,14 @@ from APP_CATEGORY.models import TourCategory
 
 class Tour(models.Model):
 
+    transports = (
+        ('aeropalne', 'هواپیما'),
+        ('bus', 'اتوبوس'),
+        ('van', 'ون'),
+        ('car', 'سواری'),
+        (None, 'ندارد'),
+    )
+
     class Meta:
         verbose_name = 'تور'
         verbose_name_plural = 'تور ها'
@@ -18,26 +26,23 @@ class Tour(models.Model):
 
 
     name = models.CharField('اسم تور', max_length=100, blank=False)
+    city = models.CharField('شهر مقصد', max_length=18)
     caption = models.CharField('توضیحات کوتاه', max_length=120, blank=False)
     description = HTMLField('توضیحات کوتاه', blank=False)
-
+    duration = models.CharField('مدت اقامت', max_length=80, blank=False)
     slug = models.SlugField(blank=True, allow_unicode=True, max_length=30, unique=True)
-
     category = models.ForeignKey(TourCategory, on_delete=models.CASCADE)
+    transport_type = models.CharField('نوع ترانسفر', max_length=30, blank=True, null=True, choices=transports)
+    
 
-    transports = (
-        ('aeropalne', 'هواپیما'),
-        ('bus', 'اتوبوس'),
-        (None, 'ندارد'),
-    )
-
-    transport_type = models.CharField('نوع ترانسفر', max_length=30, blank=False, null=True, choices=transports)
 
     @property
     def has_residence(self):
         return self.residence == None
 
-
+    @property
+    def price(self):
+        return f"{20000000:,}"
 
 
 
@@ -54,7 +59,7 @@ class Residence(models.Model):
     name = models.CharField('نام محل', max_length=80, blank=False)
     rating = models.IntegerField('ستاره', blank=True)
     room_service = models.TextField('روم سرویس', max_length=400, blank=True)
-    duration = models.CharField('مدت اقامت', max_length=80, blank=False)
+    
 
 
 

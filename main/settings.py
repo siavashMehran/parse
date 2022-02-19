@@ -39,6 +39,8 @@ INSTALLED_APPS = [
     'APP_TOUR',
     'APP_NEWSLETTER',
     'APP_CATEGORY',
+    'APP_COMMENT',
+    'APP_BLOG',
     'partials'
 ]
 

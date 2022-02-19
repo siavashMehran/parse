@@ -31,10 +31,15 @@ class Category(models.Model):
 
 
 class TourCategory(Category):
-    pass
+    class Meta:
+            verbose_name = 'دسته بندی تور'
+            verbose_name_plural = 'دسته بندی تور ها'
 
 
-
+class BlogPostCategory(Category):
+    class Meta:
+            verbose_name = 'دسته بندی بلاگ'
+            verbose_name_plural = 'دسته بندی پست ها'
 
 
 
@@ -54,6 +59,17 @@ from django.dispatch import receiver
 
 
 @receiver(pre_save, sender=TourCategory)
+def pre_save_reciever(sender, instance, *args, **kwargs):
+    generated_slug = instance.title.replace(' ', '-')
+    if (not instance.slug) or (instance.slug != generated_slug):
+        # checks to see if the slug is unique and set the slug fild, pre_save
+        while sender.objects.filter(slug=generated_slug).exists():
+            generated_slug = f"{generated_slug}-{randint(1, 10)}"
+        instance.slug = generated_slug
+    del generated_slug
+        
+
+@receiver(pre_save, sender=BlogPostCategory)
 def pre_save_reciever(sender, instance, *args, **kwargs):
     generated_slug = instance.title.replace(' ', '-')
     if (not instance.slug) or (instance.slug != generated_slug):

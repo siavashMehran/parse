@@ -5,6 +5,8 @@ from django.db import models
 from django.db.models.signals import pre_save
 from django.dispatch import receiver
 
+from django.core.files.images import ImageFile
+from io import FileIO
 
 # media files upload path
 from .upload import (
@@ -147,6 +149,8 @@ class PageHeaders(models.Model):
 
     contact_us_header_image = models.FileField('تصویر هدر صفحه تماس با ما', upload_to=media_header_image_upload_path, blank=False)
     about_us_header_image = models.FileField('تصویر هدر صفحه درباره ما', upload_to=media_header_image_upload_path, blank=False)
+    tour_header_image = models.FileField('تصویر هدر صفحه تور ها', upload_to=media_header_image_upload_path, blank=False)
+    blog_header_image = models.FileField('تصویر هدر صفحه بلاگ', upload_to=media_header_image_upload_path, blank=False)
 
     def __str__(self):
         return 'Pages Header Images'

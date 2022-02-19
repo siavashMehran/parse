@@ -1,28 +1,10 @@
 {% extends 'base/base.html' %}
 {% load static %}
-
+{% load render_partial %}
 
 {% block body %}
-<!-- =======================
-	Banner innerpage -->
-    <div class="innerpage-banner left bg-overlay-dark-7 py-7" style="background:url({{header_image.url}}) repeat; background-size:cover;">
-        <div class="container">
-          <div class="row all-text-white">
-            <div class="col-md-12 align-self-center">
-              <h1 class="innerpage-title">پشتیبانی</h1>
-              <h6 class="subtitle">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است.</h6>
-              <nav aria-label="breadcrumb">
-                <ol class="breadcrumb">
-                  <li class="breadcrumb-item"><a href="/"><i class="ti-home"></i>خانه</a></li>
-                  <li class="breadcrumb-item active">پشتیبانی</li>
-                </ol>
-              </nav>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- =======================
-          Banner innerpage --> 
+
+          {% render_partial  "partials.views.partial_banner" "about" %}
           <section class="grayBG pt80 pb80">
             <div class="container ">
                 <div class="row">

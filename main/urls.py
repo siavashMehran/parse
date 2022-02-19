@@ -13,12 +13,13 @@ urlpatterns = [
 
 urlpatterns = i18n_patterns(
     path('404/', response_404, name='404'),
-
-
     path('modir/', admin.site.urls),
+
     path('', include('APP_INFO.urls')),
+
     path('tour/', include('APP_TOUR.urls')),
     path('newsletter/', include('APP_NEWSLETTER.urls')),
+    path('blog/', include('APP_BLOG.urls')),
 )
 
 if settings.DEBUG:

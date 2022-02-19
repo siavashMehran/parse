@@ -14,6 +14,14 @@
                     <li class="nav-item"><a class="nav-link" href="{% url 'about' %}">درباره ما</a></li>
                     <li class="nav-item"><a class="nav-link" href="{% url 'contact' %}">پشتیبانی</a></li>
                     <li class="nav-item"><a class="nav-link" href="{% url 'tours' %}">تور ها</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" id="docMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">مجله گردشگری</a>
+                        <ul class="dropdown-menu" aria-labelledby="docMenu">
+                            {% for category in blog_categories %}
+                            <li><a class="dropdown-item" href="{% url 'blog_list_view' category.slug %}">{{category.title}}</a></li>
+                          {% endfor %}
+                        </ul>
+                      </li>
                 </ul>
             </div>
             <!-- Main Menu End -->

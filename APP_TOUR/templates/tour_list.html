@@ -1,9 +1,9 @@
 {% extends 'base/base.html' %}
 {% load static %}
-
-{% block path %}تور ها{% endblock path %}
+{% load render_partial %}
 
 {% block body %}
+{% render_partial  "partials.views.partial_banner" "tour" %}
 
 <section class="pt80 pb80 cruise-grid-view">
     <div class="container">
@@ -24,45 +24,63 @@
                       </div>
                     </div>
                   </div>
-                  
-                  <div class="col-lg-9 col-md-12 col-sm-12">
-                    <div class="listing-item ">
-                      <article class="TravelGo-category-listing fl-wrap">
-                        <div class="row">
-                          <div class="col-lg-5 col-md-6 col-sm-12">
-                            <div class="TravelGo-category-img TravelGo-category-list-img"> <a href="hotel-detailed.html"><img src="{% static 'images/cruises/7.jpg'%}" alt=""></a>
-                              <div class="TravelGo-category-opt">
-                                <div class="listing-rating card-popup-rainingvis" data-starrating2="5"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></div>
-                                <div class="rate-class-name">
-                                  <div class="score"><strong>بسیار خوب</strong> 27 بررسی</div>
-                                  <span>5.0</span>
+
+                  <div class="col-lg-9 col-md-9 col-sm-12">
+
+                    <div class="row">
+                      {% for tour in tours %}
+                      <div class="col-lg-12 col-md-12 col-sm-12">
+                        <div class="listing-item ">
+                          <article class="TravelGo-category-listing fl-wrap">
+                            <div class="row">
+                              <div class="col-lg-5 col-md-6 col-sm-12">
+                                <div class="TravelGo-category-img TravelGo-category-list-img"> <a href="hotel-detailed.html"><img src="{% static 'images/cruises/8.jpg' %}" alt=""></a>
+                                  <div class="TravelGo-category-opt">
+                                    
+                                    <div class="rate-class-name">
+                                      <div class="score"><strong>{{tour.category}}</strong>{{tour.duration}}</div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="col-lg-7 col-md-6 col-sm-12">
+                                <div class="TravelGo-category-content fl-wrap title-sin_item">
+                                  <div class="TravelGo-category-content-title fl-wrap">
+                                    <div class="TravelGo-category-content-title-item">
+                                      <h3 class="title-sin_map"><a href="hotel-detailed.html">{{tour.name}}</a></h3>
+                                      <div class="TravelGo-category-location fl-wrap">
+                                        <a class="map-item">
+                                          <i class="fas fa-map-marker-alt"></i>
+                                          {{tour.city}}
+                                        </a> 
+                                        <span>{{tour.price}} تومان </span>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <p>{{tour.caption}}</p>
+                                  <p>لیدر - بیمه - میان وعده </p>
+                                  {% with tour.residence as residence %}{% if residence %}
+                                  <ul class="facilities-list fl-wrap">
+                                    {% if residence.wifi %}<li><i class="fas fa-wifi"></i><span>وای فای رایگان</span></li>{% endif %}
+                                    {% if residence.parking %}<li><i class="fas fa-parking"></i><span>پارکینگ</span></li>{% endif %}
+                                    {% if residence.tv %}<li><i class="fas fa-tv"></i><span>TV</span></li>{% endif %}
+                                    {% if residence.food %}<li><i class="fas fa-utensils"></i><span>غذا</span></li>{% endif %}
+                                    {% if residence.aircon %}<li><i class="fas fa-temperature-low"></i><span>غذا</span></li>{% endif %}
+                                  </ul>
+                                  {% endif %}{% endwith %}
+                                  <div class="TravelGo-category-footer fl-wrap">
+                                    <a href="{% url 'tourdetail' tour.slug %}"><div class="TravelGo-category-price btn-grad"><span>جزییات و رزرو</span></div></a>
+                                    <div class="TravelGo-opt-list">
+                                      <a href="#" class="single-map-item"><i class="fas fa-map"></i><span class="TravelGo-opt-tooltip">نقشه راه</span></a>
+                                    </div>
+                                  </div>
                                 </div>
                               </div>
                             </div>
-                          </div>
-                          <div class="col-lg-7 col-md-6 col-sm-12">
-                            <div class="TravelGo-category-content fl-wrap title-sin_item">
-                              <div class="TravelGo-category-content-title fl-wrap">
-                                <div class="TravelGo-category-content-title-item">
-                                  <h3 class="title-sin_map"><a href="hotel-detailed.html">کروز آسیا و آفریقا</a></h3>
-                                  <div class="TravelGo-category-location fl-wrap"><a href="#" class="map-item"><i class="fas fa-map-marker-alt"></i>بیست و هفتم بروکلین نیویورک ، </a> <span>200 تومان </span><span></span> </div>
-                                </div>
-                              </div>
-                              <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است.</p>
-                              <ul class="facilities-list fl-wrap">
-                                <li><i class="fas fa-wifi"></i><span>وای فای رایگان</span></li>
-                                <li><i class="fas fa-parking"></i><span>پارکینگ</span></li>
-                                <li><i class="fas fa-smoking-ban"></i><span>اتاقهای غیر سیگاری</span></li>
-                                <li><i class="fas fa-utensils"></i><span> رستوران</span></li>
-                              </ul>
-                              <div class="TravelGo-category-footer fl-wrap">
-                                <div class="TravelGo-category-price btn-grad"><span>2 روز 3 شب</span></div>
-                                <div class="TravelGo-opt-list"> <a href="#" class="single-map-item"><i class="fas fa-map-marker-alt"></i><span class="TravelGo-opt-tooltip">روی نقشه</span></a> <a href="#" class="TravelGo-js-favorite"><i class="fas fa-heart"></i><span class="TravelGo-opt-tooltip">صرفه جویی</span></a> <a href="#" class="TravelGo-js-booking"><i class="fas fa-retweet"></i><span class="TravelGo-opt-tooltip">مسیرها را پیدا کنید</span></a> </div>
-                              </div>
-                            </div>
-                          </div>
+                          </article>
                         </div>
-                      </article>
+                      </div>
+                      {% endfor %}
                     </div>
                   </div>
                 </div>
