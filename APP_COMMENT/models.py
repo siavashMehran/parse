@@ -10,7 +10,7 @@ class PostComment(models.Model):
 
     user_name    = models.CharField(max_length=50, blank=False)
     body         = models.TextField(max_length=300, blank=False, null=False)
-
+    user_email   = models.EmailField(max_length=30, blank=True)
     #auto fields
     timestamp    = models.DateTimeField(auto_now_add=True)
     is_offensive = models.BooleanField(default=False)
@@ -53,6 +53,6 @@ from django.db.models.signals import post_save
 from django.dispatch import receiver
 @receiver(post_save, sender=PostComment)
 def pre_save_reciever(sender:PostComment, instance:PostComment, *args, **kwargs):
-    if BadWords.is_offensive():
+    if BadWords.is_offensive(instance):
         instance.is_offensive = True
         instance.save()

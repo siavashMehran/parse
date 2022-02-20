@@ -16,7 +16,7 @@
               </div>
               {% else %}
               <div class="alert alert-light" role="alert">
-                <a href="#" class="alert-link">{{object_list_count}} نتیجه یافت شد</a>
+                <a class="alert-link">{{object_list_count}} نتیجه یافت شد</a>
               </div>
               {% endif %}
               <div class="row">
@@ -24,7 +24,7 @@
                 <div class="col-lg-6 col-sm-6 mb-4">
                   <div class="card shadow border-0 h-100"><a href="{% url 'blog_detail_view' post.slug %}"><img src="{{post.image.url}}" alt="{{post.slug}}" class="img-fluid card-img-top"></a>
                     <div class="card-body">
-                      <h5 class="my-2"><a href="post.html" class="text-dark">{{post.title}}</a></h5>
+                      <h5 class="my-2"><a href="{% url 'blog_detail_view' post.slug %}" class="text-dark">{{post.title}}</a></h5>
                       <p class="text-gray-500 text-sm my-3"><i class="far fa-clock mr-2"></i> {{post.timestamp | timesince}} پیش</p>
                       <p class="my-2 text-muted text-sm">
                       {{post.summary}}

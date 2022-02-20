@@ -18,8 +18,8 @@ This file contains the common styles of this theme.
 @import "slick-theme.css";
 @import "jquery.fancybox.min.css";
 @import "responsive.css";
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,400i,600,600i,700');
-@import url('https://fonts.googleapis.com/css?family=Roboto:400,400i,500,500i,700');
+/* @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,400i,600,600i,700');
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,400i,500,500i,700'); */
 /*
  * Typography.less
  * -----------------------------------------------
@@ -10366,3 +10366,19 @@ h2.title {
 	font-size: 18px !important;
 }
 
+.hidd{
+	display: none;
+}
+.captcha{
+	height: 50px;
+}
+
+.comment-image {
+  font-size: 70px;
+  color: #ffcd22;
+}
+
+.more-posts {
+	display: flex;
+	justify-content: center;
+  }

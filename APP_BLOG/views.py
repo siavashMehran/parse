@@ -55,9 +55,12 @@ class BlogSearch(GenericBlogListView):
         return Post.search(q, ['-timestamp'])
 
 
-def blog_detail_view(request, postSlug):
-
-    return render(request, 'blog_detail.html')
+def blog_detail_view(request, postSlug, *args, **kwargs):
+    post:Post = Post.get_object_by_slug_or_404(postSlug)
+    related_posts = Post.objects.filter(category__title=post.category.title)[:4]
+    comments = post.get_all_comments()
+    comment_form = PostCommentModelForm()
+    return render(request, 'blog_detail.html', {'post':post, 'comments':comments, 'related_posts':related_posts, 'form':comment_form})
 
 
 

@@ -1,9 +1,10 @@
-from django.forms import ModelForm
+import imp
+from django.forms import ModelForm, CharField
 from django.forms.widgets import TextInput, Textarea
 from django.http.response import JsonResponse
 from .models import PostComment
-
-
+from captcha.fields import CaptchaField, CaptchaTextInput
+from django.utils.translation import gettext_lazy
 
 
 # for shared behavior among comment models
@@ -54,13 +55,16 @@ class CommentModelFormMixin:
         return JsonResponse(data=response_data, status=status_code, json_dumps_params={'ensure_ascii':False})
 
 
-
-
-
 class PostCommentModelForm(ModelForm, CommentModelFormMixin):
     
+    """
+    its for <Post> model is blog app
+    not to be confused by request.POST
+    """
+    captcha = CaptchaField(widget=CaptchaTextInput(attrs={'placeholder':'متن در تصویر بالا را وارد کنید'}))
+
     class Meta:
-        fields  = ['user_name', 'body']
+        fields  = ['user_name', 'body', 'user_email']
         model   = PostComment
         widgets = {
             'user_name'       : TextInput (attrs={'class':'txt-s-120 cl3 plh1 size-a-21 bo-all-1 bocl15 focus1 p-rl-20',         'placeholder':'*نام'    }),

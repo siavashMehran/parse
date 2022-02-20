@@ -34,7 +34,7 @@ class Post(models.Model):
         return self.title
 
     def get_all_comments(self):
-        return self.comments.all()
+        return self.comments.all().order_by('-pk')
 
     def get_comments_count(self):
         return len(self.get_all_comments())

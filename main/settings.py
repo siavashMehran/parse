@@ -33,6 +33,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'django_render_partial',
     'tinymce',
+    'captcha',
 
     #apps
     'APP_INFO',
@@ -105,7 +106,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/3.1/topics/i18n/
 
-LANGUAGE_CODE = 'fa-ir'
+LANGUAGE_CODE = 'fa'
 
 TIME_ZONE = 'UTC'
 
