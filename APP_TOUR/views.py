@@ -57,8 +57,17 @@ def tour_by_category(request, category):
 
 
 
-
+@querry_debuger
 def tour_details(request, slug):
-    tour = Tour.objects.get(slug=slug)
+    tour = Tour.get_by_slug_or_404(slug=slug)
+    # residence = tour.residence
+    # print(residence)
+    # print(residence)
+    # print(residence)
+    # print(residence)
+
+    context = {
+        'tour' : tour
+    }
     return render(request, 'tour_details.html', {})
 

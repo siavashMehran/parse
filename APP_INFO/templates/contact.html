@@ -7,10 +7,7 @@
         <section class="faq-area">
             <div class="container">
                 <div class="row">
-
-                    
-
-                    <div class="col-md-6 map-embed contact-map overflow-hidden">
+                    <div id="id_map_embed" class="col-md-6 map-embed contact-map overflow-hidden">
                       <div class="spacer"></div>
                         <div class="divider"><span class="bg-grad p-3 text-white border-radius-3">ما را در نقشه بیابید</span></div>
                         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3190.6102201786616!2d50.666579614723766!3d36.8996718697948!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3f8b0a6e1befb427%3A0x50c6f18d62cd73bd!2z2LHZiNiy2YfYp9uMINqv2LHYr9i02q_Ysdin2YYg2b7Yp9ix2LPZhw!5e0!3m2!1sen!2s!4v1644460575244!5m2!1sen!2s" allowfullscreen="" loading="lazy"></iframe>
@@ -19,40 +16,38 @@
 
                     
 
-                    <div class="col-md-6">
-                        <div class="spacer"></div>
-                        <div class="divider"><span class="bg-grad p-3 text-white border-radius-3">فرم ارتباط با ما</span></div>
-                        <form method="post">
-
-                            <div class="form-group">
-                                {% csrf_token %}
-                                <input name="user_name" class="form-control" type="text" placeholder="نام">
-                                <input name="user_contact_info" class="form-control" type="text" placeholder="اطلاعات تماس (ایمیل یا شماره تلفن)">
-                                <input name="title" class="form-control" type="text" placeholder="عنوان">
-                                <textarea rows="6" name="message" class="form-control"  placeholder="*پیام"></textarea>
-                                <button class="btn btn-warning" type="submit">ارسال تیکت</button>
-                            </div>
-                        </form>
-                        <div class="spacer"></div><div class="spacer"></div>
+                    <div id="id_contact_form" class="col-md-6">
+                      <div class="spacer"></div>
+                      <div class="divider"><span class="bg-grad p-3 text-white border-radius-3">فرم ارتباط با ما</span></div>
+                      <form method="post">
+                        <div class="form-group">
+                          {% csrf_token %}
+                          <input name="user_name" class="form-control" type="text" placeholder="نام">
+                          <input name="user_contact_info" class="form-control" type="text" placeholder="اطلاعات تماس (ایمیل یا شماره تلفن)">
+                          <input name="title" class="form-control" type="text" placeholder="عنوان">
+                          <textarea rows="6" name="message" class="form-control"  placeholder="*پیام"></textarea>
+                          <button class="btn btn-warning" type="submit">ارسال تیکت</button>
+                        </div>
+                      </form>
+                      <div class="spacer"></div><div class="spacer"></div>
                     </div>
 
-                    <div class="col-md-12">
+                    <div class="col-md-12" id="id_faq">
                       <div class="spacer"></div><div class="spacer"></div>
                       <div class="divider"><span class="p-3">سوالات متداول مشتریان</span></div>
                       <div class="accordion accordion-grad" id="accordion3">
-                          {% for faq in faqs %}
-                          <!-- item -->
-                          <div class="accordion-item">
-                              <div class="accordion-title"> <a class="h6 mb-0 collapsed" data-toggle="collapse" href="#collapse-7" aria-expanded="false">{{faq.question}}</a> </div>
-                              <div class="collapse" id="collapse-7" data-parent="#accordion3">
-                                <div class="accordion-content">{{faq.answer}}</div>
-                              </div>
+                        {% for faq in faqs %}
+                        <!-- item -->
+                        <div class="accordion-item">
+                            <div class="accordion-title"> <a class="h6 mb-0 collapsed" data-toggle="collapse" href="#collapse-7" aria-expanded="false">{{faq.question}}</a> </div>
+                            <div class="collapse" id="collapse-7" data-parent="#accordion3">
+                              <div class="accordion-content">{{faq.answer}}</div>
                             </div>
-                          {% endfor %}
-                          
-                        </div>
-                        <div class="spacer"></div>
-                  </div>
+                          </div>
+                        {% endfor %}
+                      </div>
+                      <div class="spacer"></div>
+                    </div>
                 </div>
             </div>
         </section>

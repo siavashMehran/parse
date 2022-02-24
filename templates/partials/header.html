@@ -13,22 +13,29 @@
                     <li class="nav-item active"><a class="nav-link" href="{% url 'home' %}">خانه</a></li>
                     <li class="nav-item"><a class="nav-link" href="{% url 'about' %}">درباره ما</a></li>
                     <li class="nav-item"><a class="nav-link" href="{% url 'contact' %}">پشتیبانی</a></li>
-                    <li class="nav-item"><a class="nav-link" href="{% url 'tours' %}">تور ها</a></li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" id="docMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">مجله گردشگری</a>
+                        <a class="nav-link dropdown-toggle" id="docMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">تور ها</a>
+                        <ul class="dropdown-menu" aria-labelledby="docMenu">
+                            {% for category in tour_categories %}
+                            <li><a class="dropdown-item" href="{% url 'tour_category_view' category.slug %}">{{category.title}}</a></li>
+                          {% endfor %}
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" id="docMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">راهنمای گردشگری</a>
                         <ul class="dropdown-menu" aria-labelledby="docMenu">
                             {% for category in blog_categories %}
                             <li><a class="dropdown-item" href="{% url 'blog_list_view' category.slug %}">{{category.title}}</a></li>
                           {% endfor %}
                         </ul>
-                      </li>
+                    </li>
                 </ul>
             </div>
             <!-- Main Menu End -->
             <!-- Header Extras Start-->
             <div class="navbar-nav">
                 <!-- extra item Btn-->
-                <div class="nav-item border-0 d-none d-lg-inline-block align-self-center"><a href="#" class="btn btn-primary">رزرو تور</a></div>
+                <div class="nav-item border-0 d-none d-lg-inline-block align-self-center"><a href="http://eghamatsafar.ir" class="btn btn-primary">دکمه خاص</a></div>
             </div>
             <!-- Header Extras End-->
         </div>

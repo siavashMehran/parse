@@ -2,6 +2,7 @@ import imp
 from django.db import models
 from django.dispatch import receiver
 from django.db.models.signals import pre_save
+from django.http import Http404
 from tinymce.models import HTMLField
 from APP_CATEGORY.models import TourCategory
 
@@ -44,7 +45,12 @@ class Tour(models.Model):
     def price(self):
         return f"{20000000:,}"
 
-
+    @classmethod
+    def get_by_slug_or_404(cls, slug):
+        try:
+            return cls.objects.get(slug=slug)
+        except:
+            raise Http404
 
 
 

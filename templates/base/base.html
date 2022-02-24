@@ -21,9 +21,11 @@
 </head>
 
 <body>
+    {% block navbar %}
     {% render_partial  "partials.views.partial_header" %}
     <!-- =======================
         header End-->
+    {% endblock navbar %}
     
     {% block body %}{% endblock body %}
     
@@ -34,14 +36,15 @@
             <div class="container">
                 <div class="row">
                     <!-- Footer widget 1 -->
-                    <div class="col-md-3 col-sm-6 order-sm-1">
-                        <div class="widget address"><a href="index.html" class="footer-logo mb-3 d-block">
-                            <!-- SVG Logo Start -->
-                            <img src="{% static 'images/logo-footer.png' %}">
-                            <!-- SVG Logo End -->
-                        </a>
-                            <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک
-                                است.</p>
+                    <div class="col-md-2 col-sm-4 order-sm-5">
+                        <div class="widget">
+                            <h6>دسترسی آسان</h6>
+                            <ul class="nav flex-column primary-hover">
+                                <li class="nav-item"><a class="nav-link" href="{% url 'contact' %}#id_faq">سوالات متداول</a></li>
+                                <li class="nav-item"><a class="nav-link" href="{% url 'contact' %}#id_map_embed">گردشگران پارسه روی نقشه</a></li>
+                                <li class="nav-item"><a class="nav-link" href="{% url 'contact' %}#id_contact_form">تماس با ما</a></li>
+                                
+                            </ul>
                         </div>
                     </div>
 
@@ -58,6 +61,8 @@
                             </div>
                         </div>
                     </div>
+
+                    
                     
                     <!-- Footer widget 5 -->
                     <div class="col-md-3 col-sm-6 order-sm-2">

@@ -1,302 +1,56 @@
 {% extends 'base/base.html' %} 
-{% load static %} 
-
-{% block title %}خانه - گردشگران پارسه{% endblock title %}
-
-{% block bread %}{% endblock bread %}
-{% block body_classes %}header-style-3 site-header-absolute{% endblock body_classes %}
+{% load static %}
+{% load render_partial %}
+{% block navbar %}{% endblock %}
 {% block body %}
+{% render_partial  "partials.views.partial_header" %}
+<section class="p-0 height-700 parallax-bg tourBanner" style="background:url({% static 'images/banner/14.jpg' %}) no-repeat 65% 0%; background-size:cover;">
+    <div class="container h-100">
+        <div class="row justify-content-between align-items-center h-100">
+            <div class="col-md-8 mb-7">
+                <h4>تور در رامسر، تور شخصی سازی شده، اولین ارایه دهنده تور دور دنیا</h4>
+                <h1 class="display-4 font-weight-bold">متخصص تور های رامسر، اشپل، و کشگل</h1>
+            </div>
+        </div>
+    </div>
+</section>
 
-<div id="content-wrap">
-    <div id="site-content" class="site-content clearfix">
-        <div id="inner-content" class="inner-content-wrap">
-           <div class="page-content">
-               <!-- SLIDER -->
-                <div class="rev_slider_wrapper fullwidthbanner-container">
-                    <div id="rev-slider2" class="rev_slider fullwidthabanner">
-                        <ul>
-                            <!-- Slide 1 -->
-                            <li data-transition="random">
-                                <!-- Main Image -->
-                                <img src="{% static 'img/ramsar.jpeg' %}" alt="image of city of ramsar" data-bgposition="center center" data-no-retina>
-                               
-                                <!-- Layers -->
-                                <div class="tp-caption tp-resizeme text-white font-heading font-weight-600 "
-                                    data-x="['left','left','left','center']" data-hoffset="['0','0','0','0']"
-                                    data-y="['middle','middle','middle','middle']" data-voffset="['-90','-90','-90','-90']"
-                                    data-fontsize="['20','20','20','16']"
-                                    data-lineheight="['70','70','40','24']"
-                                    data-width="full"
-                                    data-height="none"
-                                    data-whitespace="normal"
-                                    data-transform_idle="o:1;"
-                                    data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:2000;e:Power4.easeInOut;" 
-                                    data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;" 
-                                    data-mask_in="x:0px;y:[100%];" 
-                                    data-mask_out="x:inherit;y:inherit;" 
-                                    data-start="700" 
-                                    data-splitin="none" 
-                                    data-splitout="none" 
-                                    data-responsive_offset="on">
-                                    آزانس برتر رامسر
-                                </div>
-
-                                <div class="tp-caption tp-resizeme text-white font-heading font-weight-700"
-                                    data-x="['left','left','left','center']" data-hoffset="['0','0','0','0']"
-                                    data-y="['middle','middle','middle','middle']" data-voffset="['-20','-20','-20','-20']"
-                                    data-fontsize="['52','52','42','32']"
-                                    data-lineheight="['65','65','45','35']"
-                                    data-width="full"
-                                    data-height="none"
-                                    data-whitespace="normal"
-                                    data-transform_idle="o:1;"
-                                    data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:2000;e:Power4.easeInOut;" 
-                                    data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;"
-                                    data-mask_in="x:0px;y:[100%];" 
-                                    data-mask_out="x:inherit;y:inherit;" 
-                                    data-start="1000" 
-                                    data-splitin="none" 
-                                    data-splitout="none" 
-                                    data-responsive_offset="on">
-                                    تیم پشتیبانی حرفه ای
-                                </div>
-
-                                <div class="tp-caption tp-resizeme text-white font-heading font-weight-700"
-                                    data-x="['left','left','left','center']" data-hoffset="['0','0','0','0']"
-                                    data-y="['middle','middle','middle','middle']" data-voffset="['45','45','45','45']"
-                                    data-fontsize="['52','52','42','32']"
-                                    data-lineheight="['65','65','45','35']"
-                                    data-width="full"
-                                    data-height="none"
-                                    data-whitespace="normal"
-                                    data-transform_idle="o:1;"
-                                    data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:2000;e:Power4.easeInOut;" 
-                                    data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;" 
-                                    data-mask_in="x:0px;y:[100%];" 
-                                    data-mask_out="x:inherit;y:inherit;" 
-                                    data-start="1000" 
-                                    data-splitin="none" 
-                                    data-splitout="none" 
-                                    data-responsive_offset="on">
-                                    با راهنمایی جامع سفر
-                                </div>
-
-                                <!-- <div class="tp-caption "
-                                    data-x="['left','left','left','center']" data-hoffset="['0','0','0','0']"
-                                    data-y="['middle','middle','middle','middle']" data-voffset="['153','153','153','153']"
-                                    data-width="full"
-                                    data-height="none"
-                                    data-whitespace="normal"
-                                    data-transform_idle="o:1;"
-                                    data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:2000;e:Power4.easeInOut;" 
-                                    data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;" 
-                                    data-mask_in="x:0px;y:[100%];" 
-                                    data-mask_out="x:inherit;y:inherit;" 
-                                    data-start="1000" 
-                                    data-splitin="none" 
-                                    data-splitout="none" 
-                                    data-responsive_offset="on">
-                                    <a href="#" class="themesflat-button bg-accent big"><span>برو</span></a>
-                                </div> -->
-                            </li>
-                            <!-- /End Slide 1 -->
-
-                            <!-- Slide 2 -->
-                            <li data-transition="random">
-                                <!-- Main Image -->
-                                <img src="{% static 'img/telecab.jpeg' %}" alt="raamsar telecabin" data-bgposition="center center" data-no-retina>
-                               
-                                <!-- Layers -->
-                                <div class="tp-caption tp-resizeme text-white font-heading font-weight-600 text-center"
-                                    data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
-                                    data-y="['middle','middle','middle','middle']" data-voffset="['-90','-90','-90','-90']"
-                                    data-fontsize="['20','20','20','16']"
-                                    data-lineheight="['70','70','40','24']"
-                                    data-width="full"
-                                    data-height="none"
-                                    data-whitespace="normal"
-                                    data-transform_idle="o:1;"
-                                    data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:2000;e:Power4.easeInOut;" 
-                                    data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;" 
-                                    data-mask_in="x:0px;y:[100%];" 
-                                    data-mask_out="x:inherit;y:inherit;" 
-                                    data-start="700" 
-                                    data-splitin="none" 
-                                    data-splitout="none" 
-                                    data-responsive_offset="on">
-                                    ارایه کننده تور های شخصی سازی شده
-                                </div>
-
-                                <div class="tp-caption tp-resizeme text-white font-heading font-weight-700 text-center"
-                                    data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
-                                    data-y="['middle','middle','middle','middle']" data-voffset="['-20','-20','-20','-20']"
-                                    data-fontsize="['52','52','42','32']"
-                                    data-lineheight="['65','65','45','35']"
-                                    data-width="full"
-                                    data-height="none"
-                                    data-whitespace="normal"
-                                    data-transform_idle="o:1;"
-                                    data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:2000;e:Power4.easeInOut;" 
-                                    data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;"
-                                    data-mask_in="x:0px;y:[100%];" 
-                                    data-mask_out="x:inherit;y:inherit;" 
-                                    data-start="1000" 
-                                    data-splitin="none" 
-                                    data-splitout="none" 
-                                    data-responsive_offset="on">
-                                    با ما لحظه لحظه سفر خود را برنامه ریزی کنید
-                                </div>
-
-                                <div class="tp-caption tp-resizeme text-white font-heading font-weight-700 text-center"
-                                    data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
-                                    data-y="['middle','middle','middle','middle']" data-voffset="['45','45','45','45']"
-                                    data-fontsize="['52','52','42','32']"
-                                    data-lineheight="['65','65','45','35']"
-                                    data-width="full"
-                                    data-height="none"
-                                    data-whitespace="normal"
-                                    data-transform_idle="o:1;"
-                                    data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:2000;e:Power4.easeInOut;" 
-                                    data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;" 
-                                    data-mask_in="x:0px;y:[100%];" 
-                                    data-mask_out="x:inherit;y:inherit;" 
-                                    data-start="1000" 
-                                    data-splitin="none" 
-                                    data-splitout="none" 
-                                    data-responsive_offset="on">
-                                    بدون محدودیت
-                                </div>
-
-                                <div class="tp-caption text-center"
-                                    data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
-                                    data-y="['middle','middle','middle','middle']" data-voffset="['153','153','153','153']"
-                                    data-width="full"
-                                    data-height="none"
-                                    data-whitespace="normal"
-                                    data-transform_idle="o:1;"
-                                    data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:2000;e:Power4.easeInOut;" 
-                                    data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;" 
-                                    data-mask_in="x:0px;y:[100%];" 
-                                    data-mask_out="x:inherit;y:inherit;" 
-                                    data-start="1000" 
-                                    data-splitin="none" 
-                                    data-splitout="none" 
-                                    data-responsive_offset="on">
-                                    <a href="#" class="themesflat-button bg-accent big"><span>دیدن آفر های تور</span></a>
-                                </div>
-                            </li>
-                            <!-- /End Slide 2 -->
-
-                            <!-- Slide 3 -->
-                            <li data-transition="random">
-                                <!-- Main Image -->
-                                <img src="{% static 'img/other(2).jpg' %}" alt="cup of coffe" data-bgposition="center center" data-no-retina>
-                               
-                                <!-- Layers -->
-                                <div class="tp-caption tp-resizeme text-white font-heading font-weight-600 text-right"
-                                    data-x="['right','right','right','center']" data-hoffset="['0','0','0','0']"
-                                    data-y="['middle','middle','middle','middle']" data-voffset="['-90','-90','-90','-90']"
-                                    data-fontsize="['20','20','20','16']"
-                                    data-lineheight="['70','70','40','24']"
-                                    data-width="full"
-                                    data-height="none"
-                                    data-whitespace="normal"
-                                    data-transform_idle="o:1;"
-                                    data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:2000;e:Power4.easeInOut;" 
-                                    data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;" 
-                                    data-mask_in="x:0px;y:[100%];" 
-                                    data-mask_out="x:inherit;y:inherit;" 
-                                    data-start="700" 
-                                    data-splitin="none" 
-                                    data-splitout="none" 
-                                    data-responsive_offset="on">
-                                    با اقامت سفر
-                                </div>
-
-                                <div class="tp-caption tp-resizeme text-white font-heading font-weight-700 text-right"
-                                    data-x="['right','right','right','center']" data-hoffset="['0','0','0','0']"
-                                    data-y="['middle','middle','middle','middle']" data-voffset="['-20','-20','-20','-20']"
-                                    data-fontsize="['52','52','42','32']"
-                                    data-lineheight="['65','65','45','35']"
-                                    data-width="full"
-                                    data-height="none"
-                                    data-whitespace="normal"
-                                    data-transform_idle="o:1;"
-                                    data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:2000;e:Power4.easeInOut;" 
-                                    data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;"
-                                    data-mask_in="x:0px;y:[100%];" 
-                                    data-mask_out="x:inherit;y:inherit;" 
-                                    data-start="1000" 
-                                    data-splitin="none" 
-                                    data-splitout="none" 
-                                    data-responsive_offset="on">
-                                    بلیط هواپیما و هتل 
-                                </div>
-
-                                <div class="tp-caption tp-resizeme text-white font-heading font-weight-700 text-right"
-                                    data-x="['right','right','right','center']" data-hoffset="['0','0','0','0']"
-                                    data-y="['middle','middle','middle','middle']" data-voffset="['45','45','45','45']"
-                                    data-fontsize="['52','52','42','32']"
-                                    data-lineheight="['65','65','45','35']"
-                                    data-width="full"
-                                    data-height="none"
-                                    data-whitespace="normal"
-                                    data-transform_idle="o:1;"
-                                    data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:2000;e:Power4.easeInOut;" 
-                                    data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;" 
-                                    data-mask_in="x:0px;y:[100%];" 
-                                    data-mask_out="x:inherit;y:inherit;" 
-                                    data-start="1000" 
-                                    data-splitin="none" 
-                                    data-splitout="none" 
-                                    data-responsive_offset="on">
-                                    ها را ببینید، مقایسه کنید
-                                </div>
-
-                                <div class="tp-caption text-right"
-                                    data-x="['right','right','right','center']" data-hoffset="['0','0','0','0']"
-                                    data-y="['middle','middle','middle','middle']" data-voffset="['153','153','153','153']"
-                                    data-width="full"
-                                    data-height="none"
-                                    data-whitespace="normal"
-                                    data-transform_idle="o:1;"
-                                    data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:2000;e:Power4.easeInOut;" 
-                                    data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;" 
-                                    data-mask_in="x:0px;y:[100%];" 
-                                    data-mask_out="x:inherit;y:inherit;" 
-                                    data-start="1000" 
-                                    data-splitin="none" 
-                                    data-splitout="none" 
-                                    data-responsive_offset="on">
-                                    <a href="#" class="themesflat-button bg-accent big"><span>رزرو کنید</span></a>
-                                </div>
-                            </li>
-                            <!-- /End Slide 3 -->
-                        </ul>
-                    </div> 
+<section class="bg-light pt80 pb60 solutions">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 mx-auto text-center mb-5">
+                <h2 class="title text-center">چرا ما را انتخاب کنید</h2>
+                <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است.
+                </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-6 col-lg-3 mb-4 mb-lg-0">
+                <div class="shadow-hover h-100 bg-white px-5 pt-0 pb-5 text-center up-on-hover"><span class="alt-font text-light-gray display-2 font-italic opacity-2">1</span> <span class="d-block mb-4"><i class="fas fa-road display-2 text-grad"></i></span>
+                    <a class="h5" href="#">
+                        اتومبیل های مدل بالا
+                    </a>
                 </div>
-                <!-- END SLIDER -->
+            </div>
+            <div class="col-sm-6 col-lg-3 mb-4 mb-lg-0">
+                <div class="shadow-hover h-100 bg-white px-5 pt-0 pb-5 text-center up-on-hover"><span class="alt-font text-light-gray display-2 font-italic opacity-2">2</span> <span class="d-block mb-4"><i class="fas fa-utensils display-2 text-grad"></i></span>
+                    <a class="h5" href="#">
+                        غذای با کیفیت
+                    </a>
+                </div>
+            </div>
+            <div class="col-sm-6 col-lg-3 mb-4 mb-lg-0">
+                <div class="shadow-hover h-100 bg-white px-5 pt-0 pb-5 text-center up-on-hover"><span class="alt-font text-light-gray display-2 font-italic opacity-2">3</span> <span class="d-block mb-4"><i class="fas fa-ticket-alt display-2 text-grad"></i></span> <a class="h5" href="#">رزرو بلیط پرواز</a></div>
+            </div>
+            <div class="col-sm-6 col-lg-3 mb-4 mb-lg-0">
+                <div class="shadow-hover h-100 bg-white px-5 pt-0 pb-5 text-center up-on-hover"><span class="alt-font text-light-gray display-2 font-italic opacity-2">4</span> <span class="d-block mb-4"><i class="fas fa-child display-2 text-grad"></i></span> <a class="h5" href="#">تور
+                    تور لیدر محلی</a></div>
+            </div>
+        </div>
+    </div>
+</section>
 
-                
 
-           </div><!-- /.page-content -->
-        </div><!-- /#inner-content -->
-    </div><!-- /#site-content -->
-</div><!-- /#content-wrap -->
-
+{% include 'include/newsletter.html' %}
 
 {% endblock body %}
-
-
-
-{% block scripts %}
-<script src="{% static 'includes/rev-slider/js/extensions/revolution.extension.actions.min.js'%}"></script>
-<script src="{% static 'includes/rev-slider/js/extensions/revolution.extension.carousel.min.js'%}"></script>
-<script src="{% static 'includes/rev-slider/js/extensions/revolution.extension.kenburn.min.js'%}"></script>
-<script src="{% static 'includes/rev-slider/js/extensions/revolution.extension.layeranimation.min.js'%}"></script>
-<script src="{% static 'includes/rev-slider/js/extensions/revolution.extension.migration.min.js'%}"></script>
-<script src="{% static 'includes/rev-slider/js/extensions/revolution.extension.navigation.min.js'%}"></script>
-<script src="{% static 'includes/rev-slider/js/extensions/revolution.extension.parallax.min.js'%}"></script>
-<script src="{% static 'includes/rev-slider/js/extensions/revolution.extension.slideanims.min.js'%}"></script>
-<script src="{% static 'includes/rev-slider/js/extensions/revolution.extension.video.min.js'%}"></script>
-{% endblock scripts %}

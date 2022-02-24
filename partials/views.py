@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from APP_CATEGORY.models import BlogPostCategory
+from APP_CATEGORY.models import BlogPostCategory, TourCategory
 
 from APP_INFO.models import PageHeaders, SiteSettings
 
@@ -9,7 +9,14 @@ from APP_INFO.models import PageHeaders, SiteSettings
 def partial_header(request):
     logo = SiteSettings.objects.latest('pk').site_logo
     blog_categories = BlogPostCategory.objects.all()
-    return render(request, 'partials/header.html', {'logo':logo, 'blog_categories' : blog_categories})
+    tour_categories = TourCategory.objects.all()
+
+    context = {
+        'logo':logo, 
+        'blog_categories' : blog_categories,
+        'tour_categories' : tour_categories,
+        }
+    return render(request, 'partials/header.html', context=context)
 
 def partial_banner(request, *args, **kwargs):
     banner_images = PageHeaders.objects.latest('pk')

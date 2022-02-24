@@ -1,158 +1,204 @@
 {% extends 'base/base.html' %}
 {% load static %}
-{% block path %}تور{% endblock path %}
+
 {% block body %}
 
-<!-- PROJECT DETAIL -->
-<div class="row-project-detail">
+
+<section>
+    <!-- Slider main container-->
+    <div class="swiper-container detail-slider slider-gallery">
+      <!-- Additional required wrapper-->
+      <div class="swiper-wrapper">
+        <!-- Slides-->
+        <div class="swiper-slide"><a data-toggle="gallery-top" title="خیابان ما"><img src="{% static 'images/hotels/room-details1.jpg' %}" alt="خیابان ما" class="img-fluid"></a></div>
+        <div class="swiper-slide"><a data-toggle="gallery-top" title="خارج از"><img src="{% static 'images/hotels/room-details2.jpg' %}" alt="خارج از" class="img-fluid"></a></div>
+        <div class="swiper-slide"><a data-toggle="gallery-top" title="ورودی عقب"><img src="{% static 'images/hotels/room-details3.jpg' %}" alt="ورودی عقب" class="img-fluid"></a></div>
+        <div class="swiper-slide"><a data-toggle="gallery-top" title="آشپزخانه"><img src="{% static 'images/hotels/room-details4.jpg' %}" alt="آشپزخانه" class="img-fluid"></a></div>
+        <div class="swiper-slide"><a data-toggle="gallery-top" title="اتاق خواب"><img src="{% static 'images/hotels/room-details.jpg' %}" alt="اتاق خواب" class="img-fluid"></a></div>
+        <div class="swiper-slide"><a data-toggle="gallery-top" title="اتاق خواب"><img src="{% static 'images/hotels/room-details2.jpg' %}" alt="اتاق خواب" class="img-fluid"></a></div>
+      </div>
+      <div class="swiper-pagination swiper-pagination-white"></div>
+      <div class="swiper-button-prev swiper-button-white"></div>
+      <div class="swiper-button-next swiper-button-white"></div>
+    </div>
+  </section>
+
+
+
+  <section class="pt80 pb80 listingDetails Campaigns">
     <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="themesflat-spacer clearfix" data-desktop="60" data-mobile="60" data-smobile="60"></div>
-                <div class="detail-inner-wrap">
-                    <div class="detail-info">
-                        <div class="content-info">
-                            <div class="themesflat-headings style-2 clearfix rtl">
-                                <h2 class="heading line-height-62">تور سلمل (جواهرده)</h2>
-                                <div class="sep has-width w80 accent-bg clearfix">
-                                </div>                                                
-                            </div>
-                            <ul class="list-info has-icon icon-left narm fowe">
-                                
-                                <li>
-                                    <span class="right">شهر</span>
-                                    <span class="text">رامسر<span class="icon"><i class="fa fa-street-view"></i></span></span>
-                                </li>
+      <div class="row">
+  
+        <!-- Tab line -->
+        <div class="col-lg-8 col-md-12 col-sm-12 ">
 
-                                <li>
-                                    <span class="right">ظرفیت</span>
-                                    <span class="text"> از 4 تا 6 نفر<span class="icon"><i class="fa fa-male"></i></span></span>
-                                </li>
+          <ul class="nav nav-tabs tab-line">
+            <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#tab-de-1"> شرح </a> </li>    
+          </ul>
 
-                                <li>
-                                    <span class="right">ترانسفر</span>
-                                    <span class="text">پرواز یا اتوبوس<span class="icon"><i class="fa fa-automobile"></i></span></span>
-                                </li>
-
-                                <li>
-                                    <span class="right">اقامت</span>
-                                    <span class="text">هتل 5 ستاره<span class="icon"><i class="fa fa-hotel"></i></span></span>
-                                </li>
-
-
-                            </ul>
-                        </div><!-- /.content-info -->
-
-                        <div class="themesflat-spacer clearfix" data-desktop="46" data-mobile="35" data-smobile="35"></div>
-
-                        <div class="content-info info-brochures">
-                            <div class="themesflat-headings style-2 clearfix rtl">
-                                <h2 class="heading line-height-62">جزییات</h2>
-                                <div class="sep has-width w60 accent-bg clearfix">
-                                </div>                                                
-                            </div>
-                            <div class="themesflat-spacer clearfix" data-desktop="34" data-mobile="35" data-smobile="35"></div>
-                            <div class="themesflat-content-box" data-margin="0 0 0 0" data-mobilemargin="0 0 0 0">
-                                <div class="themesflat-accordions style-3 has-icon icon-left iconstyle-2 our-background clearfix">
-
-                                    <div class="accordion-item active">
-                                        <h3 class="accordion-heading "><span class="inner">اطلاعات پرواز</span></h3>
-                                        <div class="accordion-content">
-                                            <ul class="list-info has-icon icon-left">
-                                                <li><span class="text"> 100 KG <span class="icon"><i class="fa fa-warning"></i></span></span><span class="right">ظرفیت بار</span></li>
-                                                <li><span class="text"> کیش ایر <span class="icon"><i class="fa fa-home"></i></span></span><span class="right">شرکت تامین کننده</span></li>
-                                            </ul>
-                                        </div>
-                                    </div><!-- /.accordion-item -->
-                                    
-
-                                    <div class="accordion-item">
-                                        <h3 class="accordion-heading"><span class="inner">اطلاعات اقامتگاه</span></h3>
-                                        <div class="accordion-content">
-                                            <ul class="list-info has-icon icon-left narm fowe">
-                                
-                                                <li>
-                                                    <span class="right">شهر</span>
-                                                    <span class="text">رامسر<span class="icon"><i class="fa fa-street-view"></i></span></span>
-                                                </li>
-                
-                                                <li>
-                                                    <span class="right">ظرفیت</span>
-                                                    <span class="text"> از 4 تا 6 نفر<span class="icon"><i class="fa fa-male"></i></span></span>
-                                                </li>
-                
-                                                <li>
-                                                    <span class="right">ترانسفر</span>
-                                                    <span class="text">پرواز یا اتوبوس<span class="icon"><i class="fa fa-automobile"></i></span></span>
-                                                </li>
-                
-                                                <li>
-                                                    <span class="right">اقامت</span>
-                                                    <span class="text">هتل 5 ستاره<span class="icon"><i class="fa fa-hotel"></i></span></span>
-                                                </li>
-                
-                
-                                            </ul>
-                                        </div>
-                                    </div><!-- /.accordion-item -->
-                                    
-
-                                    <div class="accordion-item">
-                                        <h3 class="accordion-heading"><span class="inner">انتخاب خدمات تور</span></h3>
-                                        <div class="accordion-content">
-                                            <div class="button-wrap has-icon icon-left size-14 pf21 tac">
-                                                <a href="#" class="themesflat-button font-default bg-light-white w100"><span>اسکورت از فرودگاه</span></a>
-                                            </div>
-                                            <div class="button-wrap has-icon icon-left size-14 pf21 tac">
-                                                <a href="#" class="themesflat-button font-default bg-light-white w100"><span>صبحانه در تخت</span></a>
-                                            </div>
-                                        </div>
-                                    </div><!-- /.accordion-item -->
-                                    
-
-                                </div><!-- /.themesflat-accordion -->
-                            </div><!-- /.themesflat-content-box -->
-                            
-                            
-                        </div>
-                    </div>
-                    <div class="detail-gallery">
-                        <div class="themesflat-spacer clearfix" data-desktop="21" data-mobile="21" data-smobile="21"></div>
-                        <div class="themesflat-gallery style-2 has-arrows arrow-center arrow-circle offset-v-82 has-thumb w185 clearfix" data-gap="0" data-column="1" data-column2="1" data-column3="1" data-auto="false">
-                             <div class="owl-carousel owl-theme">
-                                <div class="gallery-item" >
-                                    <div class="inner">
-                                        <div class="thumb">
-                                            <img src="{% static 'img/ramsar.jpeg' %}" alt="Image">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="gallery-item" >
-                                    <div class="inner">
-                                        <div class="thumb">
-                                            <img src="{% static 'img/telecab.jpeg' %}" alt="Image">
-                                        </div>
-                                    </div>
-                                </div>
-                            
-                                
-                             </div>
-                         </div><!-- /.themesflat-cousel-box -->
-                        <div class="themesflat-spacer clearfix" data-desktop="40" data-mobile="40" data-smobile="40"></div>     
-                        <div class="flat-content-wrap style-3 clearfix tar">
-                            <h5 class="title tar">در این تور چه خواهید دید</h5>
-                            <div class="sep has-width w60 accent-bg margin-top-18 clearfix"></div>                                          
-                            <p class="margin-top-28">اطلاعات کامل متنیاطلاعات کامل متنیاطلاعات کامل متنیاطلاعات کامل متنیاطلاعات کامل متنیاطلاعات کامل متنیاطلاعات کامل متنیاطلاعات کامل متنیاطلاعات کامل متنیاطلاعات کامل متنیاطلاعات کامل متنیاطلاعات کامل متنیاطلاعات کامل متنی</p>
-                            <p>اطلاعات کامل متنیاطلاعات کامل متنیاطلاعات کامل متنیاطلاعات کامل متنیاطلاعات کامل متنیاطلاعات کامل متنیاطلاعات کامل متنیاطلاعات کامل متنیاطلاعات کامل متنیاطلاعات کامل متنیاطلاعات کامل متنیاطلاعات کامل متنی</p>
-                        </div>
-                    </div>
+          <div class="tab-content">
+            <div class="tab-pane" id="tab-de-1">
+              <div class="text-block NopaddingDetails">
+                <h5 class="mb-4">رستوران </h5>
+                <p class="text-muted font-weight-light">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است.
+                  لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است.
+                </p>
+                <p class="text-muted font-weight-light">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است.
+                  لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است.
+                </p>
+                <p class="text-muted font-weight-light">همچنین در آپارتمان:</p>
+                <ul class="text-muted font-weight-light roomlist">
+                  <li>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم.</li>
+                  <li>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم.</li>
+                  <li>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم.</li>
+                  <li>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم.</li>
+                  <li>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم.</li>
+                </ul>
+                <p class="text-muted font-weight-light">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است.
+                  لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است.
+                </p>
+              </div>
+              <div class="text-block">
+                <!-- Listing Location-->
+                <h5 class="mb-4">محل</h5>
+                <div class="map-wrapper-300 mb-3">
+                  <div class="map-container fw-map">
+                    <div id="map-main"> </div>
+                  </div>
                 </div>
-                <div class="themesflat-spacer clearfix" data-desktop="58" data-mobile="60" data-smobile="60"></div>
+              </div>
+              <div class="text-block">
+                <!-- Gallery-->
+                <h5 class="mb-4">گالری</h5>
+                <div class="row gallery ml-n1 mr-n1">
+                  <div class="col-lg-4 col-6 px-1 mb-2"><a href="#"><img src="images/hotels/room1.jpg" alt="..." class="img-fluid"></a></div>
+                  <div class="col-lg-4 col-6 px-1 mb-2"><a href="#"><img src="images/hotels/room2.jpg" alt="..." class="img-fluid"></a></div>
+                  <div class="col-lg-4 col-6 px-1 mb-2"><a href="#"><img src="images/hotels/room3.jpg" alt="..." class="img-fluid"></a></div>
+                </div>
+              </div>
+              <!-- Amenities-->
+              <div class="text-block">
+                <h5 class="mb-4">امکانات</h5>
+                <div class="row">
+                  <div class="col-md-6">
+                    <ul class="list-unstyled text-muted">
+                      <li class="mb-2"><i class="fa fa-wifi text-secondary w-1rem mr-3 text-center"></i> <span class="text-sm">وای فای</span></li>
+                      <li class="mb-2"><i class="fa fa-tv text-secondary w-1rem mr-3 text-center"></i> <span class="text-sm">تلویزیون کابلی</span></li>
+                      <li class="mb-2"><i class="fa fa-snowflake text-secondary w-1rem mr-3 text-center"></i> <span class="text-sm">تهویه هوا</span></li>
+                      <li class="mb-2"><i class="fa fa-thermometer-three-quarters text-secondary w-1rem mr-3 text-center"></i> <span class="text-sm">گرمایش</span></li>
+                    </ul>
+                  </div>
+                  <div class="col-md-6">
+                    <ul class="list-unstyled text-muted">
+                      <li class="mb-2"><i class="fa fa-bath text-secondary w-1rem mr-3 text-center"></i><span class="text-sm">لوازم توالت</span></li>
+                      <li class="mb-2"><i class="fa fa-utensils text-secondary w-1rem mr-3 text-center"></i><span class="text-sm">آشپزخانه مجهز</span></li>
+                      <li class="mb-2"><i class="fa fa-laptop text-secondary w-1rem mr-3 text-center"></i><span class="text-sm">میز کار</span></li>
+                      <li class="mb-2"><i class="fa fa-tshirt text-secondary w-1rem mr-3 text-center"></i><span class="text-sm">ماشین لباسشویی</span></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="text-block">
+                <p class="subtitle text-sm text-primary">بررسی ها </p>
+                <h5 class="mb-4">بررسی لیست </h5>
+                <div class="media d-block d-sm-flex review">
+                  <div class="text-md-center mr-4 mr-xl-5"><img src="images/img-22.jpg" alt="Padmé Amidala" class="avatar avatar-xl p-2 mb-2"></div>
+                  <div class="media-body">
+                    <h6 class="mt-2 mb-1">دهو اسمیت</h6>
+                    <div class="mb-2"><i class="fa fa-xs fa-star text-primary"></i><i class="fa fa-xs fa-star text-primary"></i><i class="fa fa-xs fa-star text-primary"></i><i class="fa fa-xs fa-star text-primary"></i><i class="fa fa-xs fa-star text-primary"></i> </div>
+                    <p class="text-muted text-sm">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است.
+                    </p>
+                  </div>
+                </div>
+                <div class="media d-block d-sm-flex review">
+                  <div class="text-md-center mr-4 mr-xl-5"><img src="images/img-11.jpg" alt="جبا هات" class="avatar avatar-xl p-2 mb-2"></div>
+                  <div class="media-body">
+                    <h6 class="mt-2 mb-1">اس. اسمیترز</h6>
+                    <div class="mb-2"><i class="fa fa-xs fa-star text-primary"></i><i class="fa fa-xs fa-star text-primary"></i><i class="fa fa-xs fa-star text-primary"></i><i class="fa fa-xs fa-star text-primary"></i><i class="fa fa-xs fa-star text-primary"></i> </div>
+                    <p class="text-muted text-sm">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است.
+                    </p>
+                  </div>
+                </div>
+                <div class="rebiew_section">
+                  <div id="leaveReview" class="mt-4 collapse show" style="">
+                    <h5 class="mb-4">نظرخود را ارسال کنید</h5>
+                    <form id="contact-form" method="get" action="#" class="form">
+                      <div class="row">
+                        <div class="col-sm-6">
+                          <div class="form-group">
+                            <input type="text" name="name" id="name" placeholder="نام کاربری" required="" class="form-control">
+                          </div>
+                        </div>
+                        <div class="col-sm-6">
+                          <div class="form-group">
+                            <select name="rating" id="rating" class="custom-select focus-shadow-0">
+                              <option value="5">★★★★★ (5/5)</option>
+                              <option value="4">★★★★ ☆ (4/5)</option>
+                              <option value="3">★★★ ☆☆ (3/5)</option>
+                              <option value="2">★★ ☆☆☆ (2/5)</option>
+                              <option value="1">★ ☆☆☆☆ (1/5)</option>
+                            </select>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <input type="email" name="email" id="email" placeholder="ایمیل" required="" class="form-control">
+                      </div>
+                      <div class="form-group">
+                        <textarea rows="4" name="review" id="review" placeholder="متن پیام" required="" class="form-control"></textarea>
+                      </div>
+                      <button type="submit" class="btn btn-primary">  ارسال نظر</button>
+                    </form>
+                  </div>
+                </div>
+              </div>
             </div>
-        </div><!-- /.row -->
-        
-    </div><!-- /.container -->
-</div>
-<!-- END PROJECT DETAIL -->
+            
+          </div>
 
+        </div>
+
+
+        <div class="col-lg-4 col-md-12 col-sm-12 right_Details">
+          <div class="p-4 shadow ml-lg-4 rounded sticky-top" style="top: 100px;">
+            <p class="text-muted"><span class="text-primary h2">80 تومان</span> در هر شب</p>
+            <hr class="my-4">
+            <form id="booking-form" method="post" autocomplete="off" class="form">
+              
+              <div class="form-group mb-4">
+                <label for="adults" class="form-label">تعداد بزرگسالان</label>
+                <select name="adults" id="adults" class="form-control">
+                  <option value="1">1 نفر</option>
+                  <option value="2">2 نفر</option>
+                  <option value="3">3 نفر</option>
+                  <option value="4">4 نفر</option>
+                  <option value="5">5 نفر</option>
+                  <option value="6">6 نفر</option>
+                  <option value="7">7 نفر</option>
+                </select>
+              </div>
+
+              <div class="form-group mb-4">
+                <label for="childs" class="form-label">کودکان</label>
+                <select name="childs" id="childs" class="form-control">
+                  <option value="1">1 کودک</option>
+                  <option value="2">2 کودک</option>
+                  <option value="3">3 کودک</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <button type="submit" class="btn btn-primary btn-block">محاسبه قیمت</button>
+              </div>
+            </form>
+            <hr class="my-4">
+            <div class="text-center">
+              <p> راهنمای خرید</p>
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+  </section>
 {% endblock body %}
