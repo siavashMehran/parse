@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'APP_CATEGORY',
     'APP_COMMENT',
     'APP_BLOG',
+    'APP_GALLERY',
     'partials'
 ]
 

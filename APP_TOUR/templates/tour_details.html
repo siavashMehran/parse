@@ -4,24 +4,15 @@
 {% block body %}
 
 
-<section>
-    <!-- Slider main container-->
-    <div class="swiper-container detail-slider slider-gallery">
-      <!-- Additional required wrapper-->
-      <div class="swiper-wrapper">
-        <!-- Slides-->
-        <div class="swiper-slide"><a data-toggle="gallery-top" title="خیابان ما"><img src="{% static 'images/hotels/room-details1.jpg' %}" alt="خیابان ما" class="img-fluid"></a></div>
-        <div class="swiper-slide"><a data-toggle="gallery-top" title="خارج از"><img src="{% static 'images/hotels/room-details2.jpg' %}" alt="خارج از" class="img-fluid"></a></div>
-        <div class="swiper-slide"><a data-toggle="gallery-top" title="ورودی عقب"><img src="{% static 'images/hotels/room-details3.jpg' %}" alt="ورودی عقب" class="img-fluid"></a></div>
-        <div class="swiper-slide"><a data-toggle="gallery-top" title="آشپزخانه"><img src="{% static 'images/hotels/room-details4.jpg' %}" alt="آشپزخانه" class="img-fluid"></a></div>
-        <div class="swiper-slide"><a data-toggle="gallery-top" title="اتاق خواب"><img src="{% static 'images/hotels/room-details.jpg' %}" alt="اتاق خواب" class="img-fluid"></a></div>
-        <div class="swiper-slide"><a data-toggle="gallery-top" title="اتاق خواب"><img src="{% static 'images/hotels/room-details2.jpg' %}" alt="اتاق خواب" class="img-fluid"></a></div>
-      </div>
-      <div class="swiper-pagination swiper-pagination-white"></div>
-      <div class="swiper-button-prev swiper-button-white"></div>
-      <div class="swiper-button-next swiper-button-white"></div>
+<section class="p-0 height-700 parallax-bg tourBanner" style="background:url({{tour.image.url}}) no-repeat 65% 0%; background-size:cover;">
+  <div class="container h-100">
+    <div class="row justify-content-between align-items-center h-100">
+        <div class="col-md-8 mb-7">
+            <h1 class="display-4 font-weight-bold">{{tour.name}}</h1>
+        </div>
     </div>
-  </section>
+</div>
+</section>
 
 
 
@@ -33,127 +24,106 @@
         <div class="col-lg-8 col-md-12 col-sm-12 ">
 
           <ul class="nav nav-tabs tab-line">
-            <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#tab-de-1"> شرح </a> </li>    
+            <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#tab-de-1"> جزییات </a> </li>
+            <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#tab-de-2"> شرح </a> </li>
+            {% if gallery %}
+            <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#tab-de-3"> گالری </a> </li>
+            {% endif %}    
+            {% if residence %}
+            <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#tab-de-4"> جزییات اقامتگاه </a> </li>
+            {% endif %}    
           </ul>
 
           <div class="tab-content">
             <div class="tab-pane" id="tab-de-1">
-              <div class="text-block NopaddingDetails">
-                <h5 class="mb-4">رستوران </h5>
-                <p class="text-muted font-weight-light">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است.
-                  لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است.
-                </p>
-                <p class="text-muted font-weight-light">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است.
-                  لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است.
-                </p>
-                <p class="text-muted font-weight-light">همچنین در آپارتمان:</p>
-                <ul class="text-muted font-weight-light roomlist">
-                  <li>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم.</li>
-                  <li>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم.</li>
-                  <li>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم.</li>
-                  <li>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم.</li>
-                  <li>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم.</li>
-                </ul>
-                <p class="text-muted font-weight-light">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است.
-                  لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است.
-                </p>
+              <div class="table-responsive-sm">
+                <table class="table table-hover">
+                  <tr>
+                    <th scope="row">شهر</th>
+                    <td>{{tour.city}}</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">مدت اقامت</th>
+                    <td>{{tour.duration}}</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">لیدر</th>
+                    <td>{% if tour.has_leader %}دارد{% else %}ندارد{% endif %}</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">ترانسپورت</th>
+                    <td>{% if tour.transport_type %}{{tour.transport_type}}{% else %}ندارد{% endif %}</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">اقامتگاه</th>
+                    <td>{% if tour.has_residence %}{{tour.residence.name}}{% else %}ندارد{% endif %}</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">دسته</th>
+                    <td>{{tour.category.title}}</td>
+                  </tr>
+                    
+                </table>
               </div>
-              <div class="text-block">
-                <!-- Listing Location-->
-                <h5 class="mb-4">محل</h5>
-                <div class="map-wrapper-300 mb-3">
-                  <div class="map-container fw-map">
-                    <div id="map-main"> </div>
-                  </div>
-                </div>
+            </div>
+
+            <div class="tab-pane" id="tab-de-2">
+              <div class="text-block NopaddingDetails text-muted font-weight-light">
+                {{tour.description | safe}}
               </div>
+            </div>
+            {% if gallery %}
+            <div class="tab-pane" id="tab-de-3">
+              
               <div class="text-block">
                 <!-- Gallery-->
                 <h5 class="mb-4">گالری</h5>
                 <div class="row gallery ml-n1 mr-n1">
-                  <div class="col-lg-4 col-6 px-1 mb-2"><a href="#"><img src="images/hotels/room1.jpg" alt="..." class="img-fluid"></a></div>
-                  <div class="col-lg-4 col-6 px-1 mb-2"><a href="#"><img src="images/hotels/room2.jpg" alt="..." class="img-fluid"></a></div>
-                  <div class="col-lg-4 col-6 px-1 mb-2"><a href="#"><img src="images/hotels/room3.jpg" alt="..." class="img-fluid"></a></div>
+                  <div class="portfolio-wrap grid items-4 items-padding">
+                    {% for item in gallery %}
+                    <div class="portfolio-card isotope-item digital">
+                      <div class="portfolio-card-body">
+                        <div class="portfolio-card-header"> <img src="{{item.pic.url}}" alt="{{item.title}}"> </div>
+                        <div class="portfolio-card-footer"> <a class="full-screen" href="{{item.pic.url}}" data-fancybox="portfolio" data-caption="{{item.title}}"><i class="fas fa-compress"></i></a>
+                          <h6 class="info-title"><a href="#" title="{{item.title}}">{{item.title}}</a></h6>
+                        </div>
+                      </div>
+                    </div>
+                    {% endfor %}
+                    </div>
                 </div>
               </div>
-              <!-- Amenities-->
+              
+            </div>
+            {% endif %}
+            {% if residence %}
+            <div class="tab-pane" id="tab-de-4">
               <div class="text-block">
-                <h5 class="mb-4">امکانات</h5>
+                <h5 class="mb-4">{{residence.name}} {% for i in residence.rating_as_iterable %}<i class="fa fa-star text-secondary w-1rem mr-3 text-center"></i>{% endfor %}</h5>
                 <div class="row">
-                  <div class="col-md-6">
+                  <div class="col-md-6 ">
                     <ul class="list-unstyled text-muted">
+                      {% if residence.tv %}
+                      <li class="mb-2"><i class="fa fa-tv text-secondary w-1rem mr-3 text-center"></i> <span class="text-sm">تلویزیون </span></li>
+                      {% endif %}
+                      {% if residence.wifi %}
                       <li class="mb-2"><i class="fa fa-wifi text-secondary w-1rem mr-3 text-center"></i> <span class="text-sm">وای فای</span></li>
-                      <li class="mb-2"><i class="fa fa-tv text-secondary w-1rem mr-3 text-center"></i> <span class="text-sm">تلویزیون کابلی</span></li>
+                      {% endif %}
+                      {% if residence.aircon %}
                       <li class="mb-2"><i class="fa fa-snowflake text-secondary w-1rem mr-3 text-center"></i> <span class="text-sm">تهویه هوا</span></li>
-                      <li class="mb-2"><i class="fa fa-thermometer-three-quarters text-secondary w-1rem mr-3 text-center"></i> <span class="text-sm">گرمایش</span></li>
-                    </ul>
-                  </div>
-                  <div class="col-md-6">
-                    <ul class="list-unstyled text-muted">
-                      <li class="mb-2"><i class="fa fa-bath text-secondary w-1rem mr-3 text-center"></i><span class="text-sm">لوازم توالت</span></li>
+                      {% endif %}
+                      {% if residence.food %}
                       <li class="mb-2"><i class="fa fa-utensils text-secondary w-1rem mr-3 text-center"></i><span class="text-sm">آشپزخانه مجهز</span></li>
-                      <li class="mb-2"><i class="fa fa-laptop text-secondary w-1rem mr-3 text-center"></i><span class="text-sm">میز کار</span></li>
-                      <li class="mb-2"><i class="fa fa-tshirt text-secondary w-1rem mr-3 text-center"></i><span class="text-sm">ماشین لباسشویی</span></li>
+                      {% endif %}
+                      {% if residence.parking %}
+                      <li class="mb-2"><i class="fa fa-parking text-secondary w-1rem mr-3 text-center"></i><span class="text-sm">پارکینگ</span></li>
+                      {% endif %}
                     </ul>
-                  </div>
-                </div>
-              </div>
-              <div class="text-block">
-                <p class="subtitle text-sm text-primary">بررسی ها </p>
-                <h5 class="mb-4">بررسی لیست </h5>
-                <div class="media d-block d-sm-flex review">
-                  <div class="text-md-center mr-4 mr-xl-5"><img src="images/img-22.jpg" alt="Padmé Amidala" class="avatar avatar-xl p-2 mb-2"></div>
-                  <div class="media-body">
-                    <h6 class="mt-2 mb-1">دهو اسمیت</h6>
-                    <div class="mb-2"><i class="fa fa-xs fa-star text-primary"></i><i class="fa fa-xs fa-star text-primary"></i><i class="fa fa-xs fa-star text-primary"></i><i class="fa fa-xs fa-star text-primary"></i><i class="fa fa-xs fa-star text-primary"></i> </div>
-                    <p class="text-muted text-sm">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است.
-                    </p>
-                  </div>
-                </div>
-                <div class="media d-block d-sm-flex review">
-                  <div class="text-md-center mr-4 mr-xl-5"><img src="images/img-11.jpg" alt="جبا هات" class="avatar avatar-xl p-2 mb-2"></div>
-                  <div class="media-body">
-                    <h6 class="mt-2 mb-1">اس. اسمیترز</h6>
-                    <div class="mb-2"><i class="fa fa-xs fa-star text-primary"></i><i class="fa fa-xs fa-star text-primary"></i><i class="fa fa-xs fa-star text-primary"></i><i class="fa fa-xs fa-star text-primary"></i><i class="fa fa-xs fa-star text-primary"></i> </div>
-                    <p class="text-muted text-sm">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است.
-                    </p>
-                  </div>
-                </div>
-                <div class="rebiew_section">
-                  <div id="leaveReview" class="mt-4 collapse show" style="">
-                    <h5 class="mb-4">نظرخود را ارسال کنید</h5>
-                    <form id="contact-form" method="get" action="#" class="form">
-                      <div class="row">
-                        <div class="col-sm-6">
-                          <div class="form-group">
-                            <input type="text" name="name" id="name" placeholder="نام کاربری" required="" class="form-control">
-                          </div>
-                        </div>
-                        <div class="col-sm-6">
-                          <div class="form-group">
-                            <select name="rating" id="rating" class="custom-select focus-shadow-0">
-                              <option value="5">★★★★★ (5/5)</option>
-                              <option value="4">★★★★ ☆ (4/5)</option>
-                              <option value="3">★★★ ☆☆ (3/5)</option>
-                              <option value="2">★★ ☆☆☆ (2/5)</option>
-                              <option value="1">★ ☆☆☆☆ (1/5)</option>
-                            </select>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="form-group">
-                        <input type="email" name="email" id="email" placeholder="ایمیل" required="" class="form-control">
-                      </div>
-                      <div class="form-group">
-                        <textarea rows="4" name="review" id="review" placeholder="متن پیام" required="" class="form-control"></textarea>
-                      </div>
-                      <button type="submit" class="btn btn-primary">  ارسال نظر</button>
-                    </form>
                   </div>
                 </div>
               </div>
             </div>
-            
+            {% endif %}
           </div>
 
         </div>
@@ -161,10 +131,10 @@
 
         <div class="col-lg-4 col-md-12 col-sm-12 right_Details">
           <div class="p-4 shadow ml-lg-4 rounded sticky-top" style="top: 100px;">
-            <p class="text-muted"><span class="text-primary h2">80 تومان</span> در هر شب</p>
+            <p class="text-muted"><span class="text-primary h2"> {{tour.pretty_price}} </span>تومان</p>
             <hr class="my-4">
             <form id="booking-form" method="post" autocomplete="off" class="form">
-              
+              {% csrf_token %}
               <div class="form-group mb-4">
                 <label for="adults" class="form-label">تعداد بزرگسالان</label>
                 <select name="adults" id="adults" class="form-control">
@@ -179,13 +149,14 @@
               </div>
 
               <div class="form-group mb-4">
-                <label for="childs" class="form-label">کودکان</label>
-                <select name="childs" id="childs" class="form-control">
-                  <option value="1">1 کودک</option>
-                  <option value="2">2 کودک</option>
-                  <option value="3">3 کودک</option>
-                </select>
+                {% for service in services %}
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="{{service.name}}" id="defaultCheck{{service.pk}}" name="service{{service.pk}}">
+                    <label class="form-check-label" for="defaultCheck{{service.pk}}">{{service.name}} - {{service.price}}T</label>
+                  </div>
+                {% endfor %}
               </div>
+              
               <div class="form-group">
                 <button type="submit" class="btn btn-primary btn-block">محاسبه قیمت</button>
               </div>

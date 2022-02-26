@@ -34,7 +34,7 @@
                           <article class="TravelGo-category-listing fl-wrap">
                             <div class="row">
                               <div class="col-lg-5 col-md-6 col-sm-12">
-                                <div class="TravelGo-category-img TravelGo-category-list-img"> <a href="hotel-detailed.html"><img src="{% static 'images/cruises/8.jpg' %}" alt=""></a>
+                                <div class="TravelGo-category-img TravelGo-category-list-img"> <a href="hotel-detailed.html"><img src="{{tour.image.url}}" alt="{{tour.city}}"></a>
                                   <div class="TravelGo-category-opt">
                                     
                                     <div class="rate-class-name">
@@ -53,12 +53,12 @@
                                           <i class="fas fa-map-marker-alt"></i>
                                           {{tour.city}}
                                         </a> 
-                                        <span>{{tour.price}} تومان </span>
+                                        <span>{{tour.pretty_price}} تومان </span>
                                       </div>
                                     </div>
                                   </div>
                                   <p>{{tour.caption}}</p>
-                                  <p>لیدر - بیمه - میان وعده </p>
+                                  <p>{{tour.features}}</p>
                                   {% with tour.residence as residence %}{% if residence %}
                                   <ul class="facilities-list fl-wrap">
                                     {% if residence.wifi %}<li><i class="fas fa-wifi"></i><span>وای فای رایگان</span></li>{% endif %}
@@ -71,7 +71,7 @@
                                   <div class="TravelGo-category-footer fl-wrap">
                                     <a href="{% url 'tourdetail' tour.slug %}"><div class="TravelGo-category-price btn-grad"><span>جزییات و رزرو</span></div></a>
                                     <div class="TravelGo-opt-list">
-                                      <a href="#" class="single-map-item"><i class="fas fa-map"></i><span class="TravelGo-opt-tooltip">نقشه راه</span></a>
+                                      <a href="{{tour.plan.url}}" class="single-map-item"><i class="fas fa-map"></i><span class="TravelGo-opt-tooltip">نقشه راه</span></a>
                                     </div>
                                   </div>
                                 </div>

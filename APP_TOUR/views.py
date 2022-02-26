@@ -60,14 +60,20 @@ def tour_by_category(request, category):
 @querry_debuger
 def tour_details(request, slug):
     tour = Tour.get_by_slug_or_404(slug=slug)
-    # residence = tour.residence
-    # print(residence)
-    # print(residence)
-    # print(residence)
-    # print(residence)
-
+    tour_gallery = tour.get_gallery_or_none()
+    residence = tour.get_residence_or_none()
+    tour_services = tour.services.all()
+    print()
+    print()
+    print()
+    print(request.POST)
+    print()
+    print()
     context = {
-        'tour' : tour
+        'tour' : tour,
+        'gallery' : tour_gallery,
+        'residence' : residence,
+        'services' : tour_services,
     }
-    return render(request, 'tour_details.html', {})
+    return render(request, 'tour_details.html', context)
 
